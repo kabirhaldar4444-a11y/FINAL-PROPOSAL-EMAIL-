@@ -10,7 +10,6 @@ import {
   Layout, Users, History, Settings, Mail
 } from 'lucide-react';
 import { User, UserRole } from './types';
-import LoginScreen from './components/LoginScreen';
 import UnifiedMailer from './components/UnifiedMailer';
 import EmailTemplates from './components/EmailTemplates';
 import CustomerManagement from './components/CustomerManagement';
@@ -34,7 +33,7 @@ export default function App() {
     createdAt: new Date().toISOString()
   });
   const [token, setToken] = useState<string | null>('mock_token_admin');
-  const [bootstrapping, setBootstrapping] = useState(true);
+  const [bootstrapping, setBootstrapping] = useState(false);
 
   // Tab State
   const [activeTab, setActiveTab] = useState<'proposal' | 'templates' | 'customers' | 'logs' | 'settings'>('proposal');
@@ -94,49 +93,9 @@ export default function App() {
     notify(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'success');
   };
 
-  // Cold boot verification of existing credentials
-  useEffect(() => {
-    const storedUser = localStorage.getItem('invoice_user');
-    const storedToken = localStorage.getItem('invoice_token');
-    
-    if (storedUser && storedToken) {
-      try {
-        setUser(JSON.parse(storedUser));
-        setToken(storedToken);
-      } catch (err) {
-        localStorage.removeItem('invoice_user');
-        localStorage.removeItem('invoice_token');
-      }
-    }
-    setBootstrapping(false);
-  }, []);
-
-  const handleLoginSuccess = (authenticatedUser: User, sessionToken: string) => {
-    localStorage.setItem('invoice_user', JSON.stringify(authenticatedUser));
-    localStorage.setItem('invoice_token', sessionToken);
-    setUser(authenticatedUser);
-    setToken(sessionToken);
-    notify(`Welcome back, ${authenticatedUser.name}! Dashboard connected.`, 'success');
-  };
-
   const handleLogout = () => {
-    localStorage.removeItem('invoice_user');
-    localStorage.removeItem('invoice_token');
-    setUser(null);
-    setToken(null);
-    notify('Session logged out successfully.', 'success');
+    notify('Sign Out is disabled on this build.', 'error');
   };
-
-  if (bootstrapping) {
-    return (
-      <div className="min-h-screen bg-[#070b13] flex items-center justify-center text-slate-500 font-mono text-xs">
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-5 h-5 rounded-lg bg-violet-600 animate-spin border-t border-white" />
-          <span>Synchronizing security tunnels...</span>
-        </div>
-      </div>
-    );
-  }
 
   // Login flow bypassed since authentication is disabled
 
