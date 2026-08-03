@@ -113,17 +113,11 @@ export default function App() {
             <Sparkles className="w-4 h-4 text-white animate-pulse" />
           </div>
           <div>
-            <h1 className="text-sm font-black tracking-tight text-title-color leading-none uppercase">I-SUCCESSNODE</h1>
-            <span className="text-[10px] text-muted-text tracking-wider block mt-1 font-semibold uppercase">Proposal & Sponsored Invoice Center</span>
+            <h1 className="text-sm font-black tracking-tight text-title-color leading-none uppercase">Proposal Email</h1>
           </div>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-2.5 bg-card-bg border border-card-border px-3 py-1.5 rounded-xl text-xs font-semibold">
-            <UserIcon className="w-3.5 h-3.5 text-violet-400" />
-            <span className="text-title-color">{user.name}</span>
-            <span className="text-[9px] font-bold text-violet-400 uppercase bg-violet-500/10 px-1.5 py-0.5 rounded">Admin Desk</span>
-          </div>
 
           <button
             onClick={toggleTheme}
