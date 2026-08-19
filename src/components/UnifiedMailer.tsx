@@ -24,11 +24,18 @@ export interface ProgramThemeConfig {
   subtitle: string;
   icon: React.ComponentType<{ className?: string }>;
   colorName: string;
+  // Hero banner header
+  bannerGradient: string;
   // Card & Background accents for the website
   builderBg: string;
   builderBorder: string;
-  builderGlow: string;
+  chipContainerBg: string;
+  chipContainerBorder: string;
+  inputBorder: string;
+  inputFocus: string;
+  // Preview
   previewBorder: string;
+  previewHeaderBg: string;
   previewBadgeBg: string;
   previewBadgeText: string;
   previewBadgeBorder: string;
@@ -55,22 +62,27 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       subtitle: 'PMI Global Accreditation Proposal Framework',
       icon: Zap,
       colorName: 'Purple',
-      builderBg: 'bg-purple-50/80',
-      builderBorder: 'border-purple-200',
-      builderGlow: 'shadow-purple-500/10 ring-1 ring-purple-400/30',
-      previewBorder: 'border-purple-200',
-      previewBadgeBg: 'bg-purple-100',
-      previewBadgeText: 'text-purple-800',
-      previewBadgeBorder: 'border-purple-300',
-      badgeBg: 'bg-purple-100',
-      badgeText: 'text-purple-800',
-      badgeBorder: 'border-purple-200',
+      bannerGradient: 'bg-gradient-to-r from-purple-700 via-violet-600 to-indigo-700',
+      builderBg: 'bg-gradient-to-b from-purple-100/90 via-purple-50/70 to-white',
+      builderBorder: 'border-2 border-purple-400',
+      chipContainerBg: 'bg-purple-100/60',
+      chipContainerBorder: 'border-purple-300',
+      inputBorder: 'border-purple-300',
+      inputFocus: 'focus:border-purple-600 focus:ring-2 focus:ring-purple-400/30',
+      previewBorder: 'border-2 border-purple-400',
+      previewHeaderBg: 'bg-gradient-to-r from-purple-700 to-violet-700 text-white',
+      previewBadgeBg: 'bg-white',
+      previewBadgeText: 'text-purple-900',
+      previewBadgeBorder: 'border-purple-200',
+      badgeBg: 'bg-purple-600',
+      badgeText: 'text-white',
+      badgeBorder: 'border-purple-700',
       accentBar: 'bg-purple-600',
-      activePillBg: 'bg-purple-600 text-white shadow-md shadow-purple-500/25 border-purple-600',
+      activePillBg: 'bg-purple-600 text-white border-purple-700 shadow-xs',
       activePillText: 'text-purple-700',
-      activePillBorder: 'border-purple-300',
-      iconColor: 'text-purple-600',
-      iconBg: 'bg-purple-100'
+      activePillBorder: 'border-purple-400',
+      iconColor: 'text-purple-700',
+      iconBg: 'bg-purple-200'
     };
   }
 
@@ -81,22 +93,27 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       subtitle: 'Elite Toolistic Executive Proposal Framework',
       icon: Crown,
       colorName: 'Emerald',
-      builderBg: 'bg-emerald-50/80',
-      builderBorder: 'border-emerald-200',
-      builderGlow: 'shadow-emerald-500/10 ring-1 ring-emerald-400/30',
-      previewBorder: 'border-emerald-200',
-      previewBadgeBg: 'bg-emerald-100',
-      previewBadgeText: 'text-emerald-800',
-      previewBadgeBorder: 'border-emerald-300',
-      badgeBg: 'bg-emerald-100',
-      badgeText: 'text-emerald-800',
-      badgeBorder: 'border-emerald-200',
+      bannerGradient: 'bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-800',
+      builderBg: 'bg-gradient-to-b from-emerald-100/90 via-emerald-50/70 to-white',
+      builderBorder: 'border-2 border-emerald-400',
+      chipContainerBg: 'bg-emerald-100/60',
+      chipContainerBorder: 'border-emerald-300',
+      inputBorder: 'border-emerald-300',
+      inputFocus: 'focus:border-emerald-600 focus:ring-2 focus:ring-emerald-400/30',
+      previewBorder: 'border-2 border-emerald-400',
+      previewHeaderBg: 'bg-gradient-to-r from-emerald-700 to-teal-700 text-white',
+      previewBadgeBg: 'bg-white',
+      previewBadgeText: 'text-emerald-900',
+      previewBadgeBorder: 'border-emerald-200',
+      badgeBg: 'bg-emerald-600',
+      badgeText: 'text-white',
+      badgeBorder: 'border-emerald-700',
       accentBar: 'bg-emerald-600',
-      activePillBg: 'bg-emerald-600 text-white shadow-md shadow-emerald-500/25 border-emerald-600',
+      activePillBg: 'bg-emerald-600 text-white border-emerald-700 shadow-xs',
       activePillText: 'text-emerald-700',
-      activePillBorder: 'border-emerald-300',
-      iconColor: 'text-emerald-600',
-      iconBg: 'bg-emerald-100'
+      activePillBorder: 'border-emerald-400',
+      iconColor: 'text-emerald-700',
+      iconBg: 'bg-emerald-200'
     };
   }
 
@@ -107,22 +124,27 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       subtitle: 'Harvard Executive Blueprint Proposal Framework',
       icon: Landmark,
       colorName: 'Crimson',
-      builderBg: 'bg-rose-50/80',
-      builderBorder: 'border-rose-200',
-      builderGlow: 'shadow-rose-500/10 ring-1 ring-rose-400/30',
-      previewBorder: 'border-rose-200',
-      previewBadgeBg: 'bg-rose-100',
-      previewBadgeText: 'text-rose-800',
-      previewBadgeBorder: 'border-rose-300',
-      badgeBg: 'bg-rose-100',
-      badgeText: 'text-rose-800',
-      badgeBorder: 'border-rose-200',
+      bannerGradient: 'bg-gradient-to-r from-rose-700 via-red-600 to-rose-800',
+      builderBg: 'bg-gradient-to-b from-rose-100/90 via-rose-50/70 to-white',
+      builderBorder: 'border-2 border-rose-400',
+      chipContainerBg: 'bg-rose-100/60',
+      chipContainerBorder: 'border-rose-300',
+      inputBorder: 'border-rose-300',
+      inputFocus: 'focus:border-rose-600 focus:ring-2 focus:ring-rose-400/30',
+      previewBorder: 'border-2 border-rose-400',
+      previewHeaderBg: 'bg-gradient-to-r from-rose-700 to-red-700 text-white',
+      previewBadgeBg: 'bg-white',
+      previewBadgeText: 'text-rose-900',
+      previewBadgeBorder: 'border-rose-200',
+      badgeBg: 'bg-rose-600',
+      badgeText: 'text-white',
+      badgeBorder: 'border-rose-700',
       accentBar: 'bg-rose-600',
-      activePillBg: 'bg-rose-600 text-white shadow-md shadow-rose-500/25 border-rose-600',
+      activePillBg: 'bg-rose-600 text-white border-rose-700 shadow-xs',
       activePillText: 'text-rose-700',
-      activePillBorder: 'border-rose-300',
-      iconColor: 'text-rose-600',
-      iconBg: 'bg-rose-100'
+      activePillBorder: 'border-rose-400',
+      iconColor: 'text-rose-700',
+      iconBg: 'bg-rose-200'
     };
   }
 
@@ -133,22 +155,27 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       subtitle: 'Princeton Strategic Certification Proposal Framework',
       icon: Trophy,
       colorName: 'Amber',
-      builderBg: 'bg-amber-50/80',
-      builderBorder: 'border-amber-200',
-      builderGlow: 'shadow-amber-500/10 ring-1 ring-amber-400/30',
-      previewBorder: 'border-amber-200',
-      previewBadgeBg: 'bg-amber-100',
-      previewBadgeText: 'text-amber-800',
-      previewBadgeBorder: 'border-amber-300',
-      badgeBg: 'bg-amber-100',
-      badgeText: 'text-amber-800',
-      badgeBorder: 'border-amber-200',
+      bannerGradient: 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700',
+      builderBg: 'bg-gradient-to-b from-amber-100/90 via-amber-50/70 to-white',
+      builderBorder: 'border-2 border-amber-400',
+      chipContainerBg: 'bg-amber-100/60',
+      chipContainerBorder: 'border-amber-300',
+      inputBorder: 'border-amber-300',
+      inputFocus: 'focus:border-amber-600 focus:ring-2 focus:ring-amber-400/30',
+      previewBorder: 'border-2 border-amber-400',
+      previewHeaderBg: 'bg-gradient-to-r from-amber-600 to-orange-700 text-white',
+      previewBadgeBg: 'bg-white',
+      previewBadgeText: 'text-amber-900',
+      previewBadgeBorder: 'border-amber-200',
+      badgeBg: 'bg-amber-600',
+      badgeText: 'text-white',
+      badgeBorder: 'border-amber-700',
       accentBar: 'bg-amber-600',
-      activePillBg: 'bg-amber-600 text-white shadow-md shadow-amber-500/25 border-amber-600',
+      activePillBg: 'bg-amber-600 text-white border-amber-700 shadow-xs',
       activePillText: 'text-amber-700',
-      activePillBorder: 'border-amber-300',
-      iconColor: 'text-amber-600',
-      iconBg: 'bg-amber-100'
+      activePillBorder: 'border-amber-400',
+      iconColor: 'text-amber-700',
+      iconBg: 'bg-amber-200'
     };
   }
 
@@ -160,22 +187,27 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       subtitle: 'Official I-SUCCESSNODE Training Program Proposal',
       icon: GraduationCap,
       colorName: 'Indigo',
-      builderBg: 'bg-indigo-50/80',
-      builderBorder: 'border-indigo-200',
-      builderGlow: 'shadow-indigo-500/10 ring-1 ring-indigo-400/30',
-      previewBorder: 'border-indigo-200',
-      previewBadgeBg: 'bg-indigo-100',
-      previewBadgeText: 'text-indigo-800',
-      previewBadgeBorder: 'border-indigo-300',
-      badgeBg: 'bg-indigo-100',
-      badgeText: 'text-indigo-800',
-      badgeBorder: 'border-indigo-200',
+      bannerGradient: 'bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-800',
+      builderBg: 'bg-gradient-to-b from-indigo-100/90 via-indigo-50/70 to-white',
+      builderBorder: 'border-2 border-indigo-400',
+      chipContainerBg: 'bg-indigo-100/60',
+      chipContainerBorder: 'border-indigo-300',
+      inputBorder: 'border-indigo-300',
+      inputFocus: 'focus:border-indigo-600 focus:ring-2 focus:ring-indigo-400/30',
+      previewBorder: 'border-2 border-indigo-400',
+      previewHeaderBg: 'bg-gradient-to-r from-indigo-700 to-blue-700 text-white',
+      previewBadgeBg: 'bg-white',
+      previewBadgeText: 'text-indigo-900',
+      previewBadgeBorder: 'border-indigo-200',
+      badgeBg: 'bg-indigo-600',
+      badgeText: 'text-white',
+      badgeBorder: 'border-indigo-700',
       accentBar: 'bg-indigo-600',
-      activePillBg: 'bg-indigo-600 text-white shadow-md shadow-indigo-500/25 border-indigo-600',
+      activePillBg: 'bg-indigo-600 text-white border-indigo-700 shadow-xs',
       activePillText: 'text-indigo-700',
-      activePillBorder: 'border-indigo-300',
-      iconColor: 'text-indigo-600',
-      iconBg: 'bg-indigo-100'
+      activePillBorder: 'border-indigo-400',
+      iconColor: 'text-indigo-700',
+      iconBg: 'bg-indigo-200'
     };
   }
 
@@ -186,24 +218,30 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
     subtitle: 'Custom Email Template Blueprint',
     icon: Mail,
     colorName: 'Sky',
-    builderBg: 'bg-sky-50/80',
-    builderBorder: 'border-sky-200',
-    builderGlow: 'shadow-sky-500/10 ring-1 ring-sky-400/30',
-    previewBorder: 'border-sky-200',
-    previewBadgeBg: 'bg-sky-100',
-    previewBadgeText: 'text-sky-800',
-    previewBadgeBorder: 'border-sky-300',
-    badgeBg: 'bg-sky-100',
-    badgeText: 'text-sky-800',
-    badgeBorder: 'border-sky-200',
+    bannerGradient: 'bg-gradient-to-r from-cyan-700 via-sky-600 to-blue-700',
+    builderBg: 'bg-gradient-to-b from-sky-100/90 via-sky-50/70 to-white',
+    builderBorder: 'border-2 border-sky-400',
+    chipContainerBg: 'bg-sky-100/60',
+    chipContainerBorder: 'border-sky-300',
+    inputBorder: 'border-sky-300',
+    inputFocus: 'focus:border-sky-600 focus:ring-2 focus:ring-sky-400/30',
+    previewBorder: 'border-2 border-sky-400',
+    previewHeaderBg: 'bg-gradient-to-r from-sky-700 to-cyan-700 text-white',
+    previewBadgeBg: 'bg-white',
+    previewBadgeText: 'text-sky-900',
+    previewBadgeBorder: 'border-sky-200',
+    badgeBg: 'bg-sky-600',
+    badgeText: 'text-white',
+    badgeBorder: 'border-sky-700',
     accentBar: 'bg-sky-600',
-    activePillBg: 'bg-sky-600 text-white shadow-md shadow-sky-500/25 border-sky-600',
+    activePillBg: 'bg-sky-600 text-white border-sky-700 shadow-xs',
     activePillText: 'text-sky-700',
-    activePillBorder: 'border-sky-300',
-    iconColor: 'text-sky-600',
-    iconBg: 'bg-sky-100'
+    activePillBorder: 'border-sky-400',
+    iconColor: 'text-sky-700',
+    iconBg: 'bg-sky-200'
   };
 };
+
 
 
 // Preset Course Options for rapid click-to-add row actions
@@ -1616,19 +1654,26 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
             });
 
             return (
-              <div className={`border rounded-2xl p-5 shadow-xs space-y-4 transition-all duration-300 ${activeTheme.builderBg} ${activeTheme.builderBorder} ${activeTheme.builderGlow}`}>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className="text-xs font-black uppercase tracking-tight text-slate-900 flex items-center gap-2">
-                        <ActiveIcon className={`w-4 h-4 ${activeTheme.iconColor}`} />
-                        Proposal Message Builder
-                      </h4>
-                      <span className={`px-2 py-0.5 text-[9px] font-extrabold uppercase rounded-full border ${activeTheme.badgeBg} ${activeTheme.badgeText} ${activeTheme.badgeBorder}`}>
-                        {activeTheme.brandName} Active
-                      </span>
+              <div className={`border-2 rounded-2xl overflow-hidden shadow-xs transition-all duration-300 ${activeTheme.builderBg} ${activeTheme.builderBorder}`}>
+                {/* HERO IDENTITY BANNER ACROSS TOP OF BUILDER */}
+                <div className={`px-5 py-3.5 text-white flex items-center justify-between shadow-2xs ${activeTheme.bannerGradient}`}>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-white/20 backdrop-blur-xs flex items-center justify-center border border-white/30 text-white flex-shrink-0">
+                      <ActiveIcon className="w-4.5 h-4.5 text-white" />
                     </div>
-                    <p className="text-[10px] text-slate-500 mt-0.5">Select a template framework and modify parameters inline.</p>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-xs font-black uppercase tracking-wider text-white">
+                          {activeTheme.brandName}
+                        </h4>
+                        <span className="px-2 py-0.5 text-[8px] font-black uppercase rounded-full bg-white text-slate-900 shadow-2xs">
+                          Active Framework
+                        </span>
+                      </div>
+                      <p className="text-[10px] text-white/90 font-medium">
+                        {activeTheme.subtitle}
+                      </p>
+                    </div>
                   </div>
 
                   <button
@@ -1640,236 +1685,230 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
                       setNewTemplateContent('');
                       setIsCreateTemplateOpen(true);
                     }}
-                    className="px-2.5 py-1 text-[10px] uppercase font-bold tracking-wider bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 text-slate-700 rounded-lg cursor-pointer transition-all flex items-center gap-1 shadow-2xs"
+                    className="px-3 py-1.5 text-[10px] uppercase font-extrabold tracking-wider bg-white/20 hover:bg-white text-white hover:text-slate-900 border border-white/40 hover:border-white rounded-lg cursor-pointer transition-all flex items-center gap-1.5 shadow-2xs backdrop-blur-xs"
                   >
-                    <Plus className="w-3 h-3 text-violet-600" />
+                    <Plus className="w-3 h-3" />
                     Create Template
                   </button>
                 </div>
 
-                {/* SMART PROGRAM SELECTOR DROPDOWN */}
-                <div className="relative" ref={dropdownRef}>
-                  <label className="text-[10px] text-slate-600 uppercase font-extrabold block mb-1.5 flex items-center justify-between">
-                    <span>Selected Framework Layout</span>
-                    <span className="text-[9px] font-semibold text-slate-400">({templates.length} programs available)</span>
-                  </label>
+                <div className="p-5 space-y-4">
+                  {/* SMART PROGRAM SELECTOR DROPDOWN */}
+                  <div className="relative" ref={dropdownRef}>
+                    <label className={`text-[10px] ${activeTheme.iconColor} uppercase font-extrabold block mb-1.5 flex items-center justify-between`}>
+                      <span>Selected Framework Layout</span>
+                      <span className="text-[9px] font-bold opacity-75">({templates.length} programs available)</span>
+                    </label>
 
-                  {/* SMART DROPDOWN TRIGGER */}
-                  <button
-                    type="button"
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className={`w-full bg-white hover:bg-slate-50/90 border ${isDropdownOpen ? activeTheme.activePillBorder + ' ring-2 ring-violet-500/20' : 'border-slate-300'} rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all shadow-xs text-left`}
-                  >
-                    <div className="flex items-center gap-3 min-w-0">
-                      <div className={`w-9 h-9 rounded-xl ${activeTheme.iconBg} flex items-center justify-center flex-shrink-0 border ${activeTheme.badgeBorder}`}>
-                        <ActiveIcon className={`w-4 h-4 ${activeTheme.iconColor}`} />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-black text-slate-900 truncate">
-                            {activeTemplate ? activeTemplate.templateName : 'Select Framework'}
-                          </span>
-                          <span className={`px-2 py-0.5 text-[9px] font-extrabold uppercase rounded-full border ${activeTheme.badgeBg} ${activeTheme.badgeText} ${activeTheme.badgeBorder}`}>
-                            {activeTheme.brandName}
-                          </span>
+                    {/* SMART DROPDOWN TRIGGER */}
+                    <button
+                      type="button"
+                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      className={`w-full bg-white hover:bg-slate-50/90 border-2 ${activeTheme.inputBorder} ${isDropdownOpen ? activeTheme.inputFocus : ''} rounded-xl p-3 flex items-center justify-between cursor-pointer transition-all shadow-xs text-left`}
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className={`w-9 h-9 rounded-xl ${activeTheme.iconBg} flex items-center justify-center flex-shrink-0 border ${activeTheme.inputBorder}`}>
+                          <ActiveIcon className={`w-4.5 h-4.5 ${activeTheme.iconColor}`} />
                         </div>
-                        <p className="text-[10px] text-slate-500 truncate mt-0.5 font-medium">
-                          {activeTemplate?.subject ? `Subject: ${activeTemplate.subject}` : activeTheme.subtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-2 ml-2 flex-shrink-0">
-                      <span className="text-[10px] font-bold text-slate-400 uppercase hidden sm:inline">Change</span>
-                      <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180 text-violet-600' : ''}`} />
-                    </div>
-                  </button>
-
-                  {/* SMART DROPDOWN POPUP MENU */}
-                  {isDropdownOpen && (
-                    <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl shadow-2xl overflow-hidden">
-                      {/* Search inside Dropdown */}
-                      <div className="p-2.5 border-b border-slate-100 bg-slate-50/90 flex items-center gap-2">
-                        <Search className="w-3.5 h-3.5 text-slate-400 ml-1" />
-                        <input
-                          type="text"
-                          placeholder="Search email framework programs..."
-                          value={dropdownSearch}
-                          onChange={(e) => setDropdownSearch(e.target.value)}
-                          className="w-full text-xs bg-transparent border-none outline-none text-slate-800 placeholder-slate-400 font-medium"
-                          autoFocus
-                        />
-                        {dropdownSearch && (
-                          <button onClick={() => setDropdownSearch('')} className="text-slate-400 hover:text-slate-600">
-                            <X className="w-3 h-3" />
-                          </button>
-                        )}
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-black text-slate-900 truncate">
+                              {activeTemplate ? activeTemplate.templateName : 'Select Framework'}
+                            </span>
+                            <span className={`px-2 py-0.5 text-[9px] font-extrabold uppercase rounded-full border ${activeTheme.badgeBg} ${activeTheme.badgeText} ${activeTheme.badgeBorder}`}>
+                              {activeTheme.brandName}
+                            </span>
+                          </div>
+                          <p className="text-[10px] text-slate-600 truncate mt-0.5 font-medium">
+                            {activeTemplate?.subject ? `Subject: ${activeTemplate.subject}` : activeTheme.subtitle}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Template Program List */}
-                      <div className="max-h-72 overflow-y-auto p-2 space-y-1.5">
-                        {filteredTemplates.map((t) => {
-                          const itemTheme = getProgramTheme(t.id, t.templateName);
-                          const isSelected = selectedTemplateId === t.id;
-                          const ItemIcon = itemTheme.icon;
+                      <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                        <span className={`text-[10px] font-bold ${activeTheme.iconColor} uppercase hidden sm:inline`}>Change</span>
+                        <ChevronDown className={`w-4 h-4 text-slate-600 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180 text-violet-600' : ''}`} />
+                      </div>
+                    </button>
 
-                          return (
-                            <div
-                              key={t.id}
-                              onClick={() => {
-                                setSelectedTemplateId(t.id);
-                                setIsDropdownOpen(false);
-                                onNotify(`Selected ${t.templateName}!`, 'success');
-                              }}
-                              className={`group relative flex items-center justify-between p-2.5 rounded-xl border transition-all cursor-pointer ${
-                                isSelected 
-                                  ? `${itemTheme.builderBg} ${itemTheme.badgeBorder} shadow-xs font-bold` 
-                                  : 'bg-white hover:bg-slate-50 border-slate-200/80 hover:border-slate-300'
-                              }`}
-                            >
-                              {/* Left color bar */}
-                              <div className={`w-1.5 self-stretch rounded-full ${isSelected ? itemTheme.accentBar : 'bg-slate-200 group-hover:' + itemTheme.accentBar} mr-2.5 flex-shrink-0`} />
+                    {/* SMART DROPDOWN POPUP MENU */}
+                    {isDropdownOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl shadow-2xl overflow-hidden">
+                        {/* Search inside Dropdown */}
+                        <div className="p-2.5 border-b border-slate-100 bg-slate-50/90 flex items-center gap-2">
+                          <Search className="w-3.5 h-3.5 text-slate-400 ml-1" />
+                          <input
+                            type="text"
+                            placeholder="Search email framework programs..."
+                            value={dropdownSearch}
+                            onChange={(e) => setDropdownSearch(e.target.value)}
+                            className="w-full text-xs bg-transparent border-none outline-none text-slate-800 placeholder-slate-400 font-medium"
+                            autoFocus
+                          />
+                          {dropdownSearch && (
+                            <button onClick={() => setDropdownSearch('')} className="text-slate-400 hover:text-slate-600">
+                              <X className="w-3 h-3" />
+                            </button>
+                          )}
+                        </div>
 
-                              <div className="flex items-center gap-2.5 min-w-0 flex-1">
-                                <div className={`w-8 h-8 rounded-lg ${itemTheme.iconBg} flex items-center justify-center flex-shrink-0 border ${itemTheme.badgeBorder}`}>
-                                  <ItemIcon className={`w-4 h-4 ${itemTheme.iconColor}`} />
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                  <div className="flex items-center gap-2">
-                                    <span className={`text-xs font-bold ${isSelected ? 'text-slate-900 font-extrabold' : 'text-slate-700 group-hover:text-slate-900'} truncate`}>
-                                      {t.templateName}
-                                    </span>
-                                    <span className={`px-1.5 py-0.2 text-[8px] font-extrabold uppercase rounded border ${itemTheme.badgeBg} ${itemTheme.badgeText} ${itemTheme.badgeBorder}`}>
-                                      {itemTheme.brandName}
-                                    </span>
+                        {/* Template Program List */}
+                        <div className="max-h-72 overflow-y-auto p-2 space-y-1.5">
+                          {filteredTemplates.map((t) => {
+                            const itemTheme = getProgramTheme(t.id, t.templateName);
+                            const isSelected = selectedTemplateId === t.id;
+                            const ItemIcon = itemTheme.icon;
+
+                            return (
+                              <div
+                                key={t.id}
+                                onClick={() => {
+                                  setSelectedTemplateId(t.id);
+                                  setIsDropdownOpen(false);
+                                  onNotify(`Selected ${t.templateName}!`, 'success');
+                                }}
+                                className={`group relative flex items-center justify-between p-2.5 rounded-xl border transition-all cursor-pointer ${
+                                  isSelected 
+                                    ? `${itemTheme.builderBg} ${itemTheme.inputBorder} shadow-xs font-bold` 
+                                    : 'bg-white hover:bg-slate-50 border-slate-200/80 hover:border-slate-300'
+                                }`}
+                              >
+                                {/* Left color bar */}
+                                <div className={`w-1.5 self-stretch rounded-full ${isSelected ? itemTheme.accentBar : 'bg-slate-200 group-hover:' + itemTheme.accentBar} mr-2.5 flex-shrink-0`} />
+
+                                <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                                  <div className={`w-8 h-8 rounded-lg ${itemTheme.iconBg} flex items-center justify-center flex-shrink-0 border ${itemTheme.inputBorder}`}>
+                                    <ItemIcon className={`w-4 h-4 ${itemTheme.iconColor}`} />
                                   </div>
-                                  <p className="text-[10px] text-slate-500 truncate mt-0.5">
-                                    {t.subject || itemTheme.subtitle}
-                                  </p>
+                                  <div className="min-w-0 flex-1">
+                                    <div className="flex items-center gap-2">
+                                      <span className={`text-xs font-bold ${isSelected ? 'text-slate-900 font-extrabold' : 'text-slate-700 group-hover:text-slate-900'} truncate`}>
+                                        {t.templateName}
+                                      </span>
+                                      <span className={`px-1.5 py-0.2 text-[8px] font-extrabold uppercase rounded border ${itemTheme.badgeBg} ${itemTheme.badgeText} ${itemTheme.badgeBorder}`}>
+                                        {itemTheme.brandName}
+                                      </span>
+                                    </div>
+                                    <p className="text-[10px] text-slate-500 truncate mt-0.5">
+                                      {t.subject || itemTheme.subtitle}
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center gap-1.5 ml-2 flex-shrink-0">
+                                  {isSelected && (
+                                    <CheckCircle2 className={`w-4 h-4 ${itemTheme.iconColor}`} />
+                                  )}
+                                  <button
+                                    type="button"
+                                    onClick={(e) => handleOpenEditTemplate(e, t)}
+                                    className="p-1 text-slate-400 hover:text-slate-700 rounded-md hover:bg-slate-200/60 transition-colors"
+                                    title="Edit Template"
+                                  >
+                                    <Edit3 className="w-3 h-3" />
+                                  </button>
                                 </div>
                               </div>
-
-                              <div className="flex items-center gap-1.5 ml-2 flex-shrink-0">
-                                {isSelected && (
-                                  <CheckCircle2 className={`w-4 h-4 ${itemTheme.iconColor}`} />
-                                )}
-                                <button
-                                  type="button"
-                                  onClick={(e) => handleOpenEditTemplate(e, t)}
-                                  className="p-1 text-slate-400 hover:text-slate-700 rounded-md hover:bg-slate-200/60 transition-colors"
-                                  title="Edit Template"
-                                >
-                                  <Edit3 className="w-3 h-3" />
-                                </button>
-                                <button
-                                  type="button"
-                                  onClick={(e) => handleDeleteTemplate(e, t.id, t.templateName)}
-                                  className="p-1 text-slate-400 hover:text-rose-600 rounded-md hover:bg-rose-100/60 transition-colors"
-                                  title="Delete Template"
-                                >
-                                  <Trash2 className="w-3 h-3" />
-                                </button>
-                              </div>
-                            </div>
-                          );
-                        })}
+                            );
+                          })}
+                        </div>
                       </div>
+                    )}
+
+                    {/* QUICK 1-CLICK PILLS BAR */}
+                    <div className="flex items-center gap-1.5 overflow-x-auto mt-2.5 pb-0.5 scrollbar-none">
+                      <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider flex-shrink-0 mr-0.5">Quick Switch:</span>
+                      {templates.map((t) => {
+                        const itemTheme = getProgramTheme(t.id, t.templateName);
+                        const isSelected = selectedTemplateId === t.id;
+                        const ItemIcon = itemTheme.icon;
+
+                        return (
+                          <button
+                            key={t.id}
+                            type="button"
+                            onClick={() => {
+                              setSelectedTemplateId(t.id);
+                              onNotify(`Switched to ${t.templateName}!`, 'success');
+                            }}
+                            className={`px-2.5 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer transition-all flex-shrink-0 border ${
+                              isSelected 
+                                ? `${itemTheme.activePillBg}` 
+                                : 'bg-white hover:bg-slate-50 border-slate-300 text-slate-700 hover:text-slate-900 shadow-2xs'
+                            }`}
+                          >
+                            <ItemIcon className={`w-3 h-3 ${isSelected ? 'text-white' : itemTheme.iconColor}`} />
+                            <span className="truncate max-w-[140px]">{itemTheme.brandName}</span>
+                          </button>
+                        );
+                      })}
                     </div>
-                  )}
+                  </div>
 
-                  {/* QUICK 1-CLICK PILLS BAR */}
-                  <div className="flex items-center gap-1.5 overflow-x-auto mt-2.5 pb-0.5 scrollbar-none">
-                    <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex-shrink-0 mr-0.5">Quick Switch:</span>
-                    {templates.map((t) => {
-                      const itemTheme = getProgramTheme(t.id, t.templateName);
-                      const isSelected = selectedTemplateId === t.id;
-                      const ItemIcon = itemTheme.icon;
-
-                      return (
+                  {/* DRAGGABLE CHIPS FOR PROPOSAL BUILDER */}
+                  <div className="space-y-2 mt-3">
+                    <span className={`text-[10px] font-extrabold ${activeTheme.iconColor} tracking-wider uppercase block`}>Draggable Variable Chips</span>
+                    <p className="text-[10px] text-slate-600 font-medium">Drag any chip and drop it directly into the subject or body editors below.</p>
+                    <div className={`flex flex-wrap gap-1.5 ${activeTheme.chipContainerBg} p-3 rounded-xl border ${activeTheme.chipContainerBorder} max-h-[120px] overflow-y-auto`}>
+                      {DRAGGABLE_TOKENS.map((tok, idx) => (
                         <button
-                          key={t.id}
+                          key={idx}
                           type="button"
-                          onClick={() => {
-                            setSelectedTemplateId(t.id);
-                            onNotify(`Switched to ${t.templateName}!`, 'success');
+                          draggable={true}
+                          onDragStart={(e) => {
+                            e.dataTransfer.setData('text/plain', tok.token);
                           }}
-                          className={`px-2.5 py-1 rounded-lg text-[10px] font-bold flex items-center gap-1.5 cursor-pointer transition-all flex-shrink-0 border ${
-                            isSelected 
-                              ? `${itemTheme.activePillBg}` 
-                              : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 shadow-2xs'
-                          }`}
+                          onClick={() => {
+                            setCustomBody(prev => prev + ' ' + tok.token);
+                            onNotify(`Appended tag: ${tok.token}`, 'success');
+                          }}
+                          className="bg-white hover:bg-slate-50 hover:border-slate-400 border border-slate-300 rounded-lg px-2.5 py-1 text-[10px] text-slate-800 font-mono flex items-center gap-1 cursor-grab active:cursor-grabbing transition-all shadow-2xs"
+                          title={`Drag and drop or click to insert ${tok.token}`}
                         >
-                          <ItemIcon className={`w-3 h-3 ${isSelected ? 'text-white' : itemTheme.iconColor}`} />
-                          <span className="truncate max-w-[140px]">{itemTheme.brandName}</span>
+                          <Tag className={`w-2.5 h-2.5 ${activeTheme.iconColor}`} />
+                          {tok.label}
                         </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* DRAGGABLE CHIPS FOR PROPOSAL BUILDER */}
-                <div className="space-y-2 mt-3">
-                  <span className="text-[10px] font-bold text-slate-500 tracking-wider uppercase block">Draggable Variable Chips</span>
-                  <p className="text-[10px] text-slate-500">Drag any chip and drop it directly into the subject or body editors below.</p>
-                  <div className="flex flex-wrap gap-1.5 bg-white/80 p-3 rounded-xl border border-slate-200 max-h-[120px] overflow-y-auto">
-                    {DRAGGABLE_TOKENS.map((tok, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        draggable={true}
-                        onDragStart={(e) => {
-                          e.dataTransfer.setData('text/plain', tok.token);
-                        }}
-                        onClick={() => {
-                          setCustomBody(prev => prev + ' ' + tok.token);
-                          onNotify(`Appended tag: ${tok.token}`, 'success');
-                        }}
-                        className="bg-slate-50 hover:bg-violet-50 hover:border-violet-300 border border-slate-200 rounded-lg px-2.5 py-1 text-[10px] text-slate-700 font-mono flex items-center gap-1 cursor-grab active:cursor-grabbing transition-all shadow-2xs"
-                        title={`Drag and drop or click to insert ${tok.token}`}
-                      >
-                        <Tag className="w-2.5 h-2.5 text-violet-600" />
-                        {tok.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* SUBJECT & DRAFT COORD TEXTAREAS */}
-                <div className="space-y-3 mt-4">
-                  <div>
-                    <label className="text-[10px] text-slate-600 uppercase font-bold block mb-1">Custom Subject Coordinate</label>
-                    <input
-                      type="text"
-                      placeholder="Subject Line"
-                      value={customSubject}
-                      onChange={(e) => setCustomSubject(e.target.value)}
-                      onDragOver={(e) => e.preventDefault()}
-                      onDrop={(e) => handleDrop(e, setCustomSubject)}
-                      className="w-full text-xs font-bold bg-white border border-slate-300 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 rounded-lg py-2 px-3 text-slate-900 outline-none transition-all shadow-2xs"
-                    />
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-center mb-1">
-                      <label className="text-[10px] text-slate-600 uppercase font-bold block">Formal Proposal Body Draft Content</label>
-                      <button
-                        type="button"
-                        onClick={handleResetTemplateToDefaults}
-                        className="text-[9px] uppercase tracking-wider font-extrabold text-amber-600 hover:text-amber-700 cursor-pointer"
-                      >
-                        Reset Body
-                      </button>
+                      ))}
                     </div>
-                    <textarea
-                      rows={8}
-                      placeholder="Main email markup body"
-                      value={customBody}
-                      onChange={(e) => setCustomBody(e.target.value)}
-                      onDragOver={(e) => e.preventDefault()}
-                      onDrop={(e) => handleDrop(e, setCustomBody)}
-                      className="w-full text-xs bg-white border border-slate-300 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 rounded-lg py-2 px-3 text-slate-900 outline-none font-mono leading-relaxed transition-all shadow-2xs"
-                    />
-                    <span className="text-[9px] text-slate-500 font-mono mt-1 block font-medium">Supports drag & drop. Placeholders: {"{{customer_name}}, {{invoice_table}}, {{company_email}}, {{email_signature}}"}</span>
+                  </div>
+
+                  {/* SUBJECT & DRAFT COORD TEXTAREAS */}
+                  <div className="space-y-3 mt-4">
+                    <div>
+                      <label className="text-[10px] text-slate-700 uppercase font-extrabold block mb-1">Custom Subject Coordinate</label>
+                      <input
+                        type="text"
+                        placeholder="Subject Line"
+                        value={customSubject}
+                        onChange={(e) => setCustomSubject(e.target.value)}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => handleDrop(e, setCustomSubject)}
+                        className={`w-full text-xs font-bold bg-white border ${activeTheme.inputBorder} ${activeTheme.inputFocus} rounded-lg py-2.5 px-3 text-slate-900 outline-none transition-all shadow-2xs`}
+                      />
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between items-center mb-1">
+                        <label className="text-[10px] text-slate-700 uppercase font-extrabold block">Formal Proposal Body Draft Content</label>
+                        <button
+                          type="button"
+                          onClick={handleResetTemplateToDefaults}
+                          className="text-[9px] uppercase tracking-wider font-extrabold text-amber-700 hover:text-amber-800 cursor-pointer"
+                        >
+                          Reset Body
+                        </button>
+                      </div>
+                      <textarea
+                        rows={8}
+                        placeholder="Main email markup body"
+                        value={customBody}
+                        onChange={(e) => setCustomBody(e.target.value)}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => handleDrop(e, setCustomBody)}
+                        className={`w-full text-xs bg-white border ${activeTheme.inputBorder} ${activeTheme.inputFocus} rounded-lg py-2.5 px-3 text-slate-900 outline-none font-mono leading-relaxed transition-all shadow-2xs`}
+                      />
+                      <span className="text-[9px] text-slate-600 font-mono mt-1 block font-medium">Supports drag & drop. Placeholders: {"{{customer_name}}, {{invoice_table}}, {{company_email}}, {{email_signature}}"}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1882,66 +1921,66 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
         <section className="lg:col-span-5 lg:sticky lg:top-8 space-y-4">
 
           {/* HEADER STICKY ROW CONTROL TRIGGERS */}
-          <div className="bg-white border border-slate-200 rounded-xl p-3 shadow-sm space-y-2.5">
+          <div className="bg-white border border-slate-200 rounded-xl p-3 shadow-xs space-y-2.5">
             <div className="flex justify-between items-center px-1">
               <span className="text-xs font-extrabold text-slate-900 uppercase tracking-tight flex items-center gap-1.5">
-                <Printer className="w-3.5 h-3.5 text-emerald-600" />
+                <Printer className="w-3.5 h-3.5 text-slate-700" />
                 Interactive Export Trigger Desk
               </span>
-              <span className="text-[10px] text-slate-500">Ready for Print (A4)</span>
+              <span className="text-[10px] text-slate-500 font-medium">Ready for Print (A4)</span>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
               <button
                 type="button"
                 onClick={handleDispatchGmail}
-                className="px-3.5 py-2.5 bg-gradient-to-tr from-rose-600 to-red-600 hover:from-rose-500 hover:to-red-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-rose-600/15 transition-all hover:scale-[1.02]"
+                className="px-3.5 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors"
                 title="Copies entire proposal and opens Gmail"
               >
-                <Send className="w-4 h-4" />
-                Gmail Proposal
+                <Send className="w-4 h-4 text-white" />
+                <span>Gmail Proposal</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleSendDirectly}
                 disabled={isSendingDirect}
-                className="px-3.5 py-2.5 bg-gradient-to-tr from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-violet-600/15 transition-all hover:scale-[1.02] disabled:opacity-55"
+                className="px-3.5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors disabled:opacity-55"
                 title="Send email directly via Resend API integration"
               >
                 {isSendingDirect ? (
-                  <RefreshCw className="w-4 h-4 animate-spin" />
+                  <RefreshCw className="w-4 h-4 text-white animate-spin" />
                 ) : (
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-white" />
                 )}
-                {isSendingDirect ? 'Sending...' : 'Send Direct API'}
+                <span>{isSendingDirect ? 'Sending...' : 'Send Direct API'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleExportPDF}
-                className="px-3.5 py-2.5 bg-gradient-to-tr from-amber-500 to-orange-600 hover:from-amber-450 hover:to-orange-500 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-orange-500/15 transition-all hover:scale-[1.02]"
+                className="px-3.5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
-                <Download className="w-4 h-4" />
-                Download PDF
+                <Download className="w-4 h-4 text-white" />
+                <span>Download PDF</span>
               </button>
 
               <button
                 type="button"
                 onClick={() => handleCopyFormattedHtml(false)}
-                className="px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all border border-slate-200 shadow-2xs"
+                className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors"
               >
-                {isCopied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-slate-600" />}
-                {isCopied ? 'Copied' : 'Copy HTML'}
+                {isCopied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-white" />}
+                <span>{isCopied ? 'Copied' : 'Copy HTML'}</span>
               </button>
 
               <button
                 type="button"
                 onClick={handlePrintDocument}
-                className="col-span-2 px-3.5 py-2.5 bg-slate-50 hover:bg-slate-100 text-slate-700 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all border border-slate-200 shadow-2xs"
+                className="col-span-2 px-3.5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-900 rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-colors border border-slate-300"
               >
-                <Printer className="w-4 h-4 text-slate-600" />
-                Print Proposal (A4)
+                <Printer className="w-4 h-4 text-slate-700" />
+                <span className="text-slate-900 font-bold">Print Proposal (A4)</span>
               </button>
             </div>
 
@@ -1950,7 +1989,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
               <button
                 onClick={handleSaveProposalToHistory}
                 disabled={isSaving}
-                className="text-violet-600 font-extrabold hover:text-violet-700 disabled:opacity-50 cursor-pointer uppercase text-[9px] tracking-wider"
+                className="text-violet-700 font-bold hover:text-violet-900 disabled:opacity-50 cursor-pointer uppercase text-[9px] tracking-wider"
               >
                 {isSaving ? 'Saving...' : '💾 Save to Outbox'}
               </button>
@@ -1964,32 +2003,34 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
             const ActiveIcon = activeTheme.icon;
 
             return (
-              <div className={`p-3 rounded-2xl border transition-all duration-300 shadow-sm ${activeTheme.previewBorder} ${activeTheme.builderBg}`}>
+              <div className={`rounded-2xl border-2 transition-all duration-300 overflow-hidden shadow-xs ${activeTheme.previewBorder} ${activeTheme.builderBg}`}>
                 {/* Active Program Identification Header */}
-                <div className="flex items-center justify-between mb-2.5 px-1 text-[11px] font-bold">
+                <div className={`px-4 py-2.5 flex items-center justify-between text-[11px] font-bold ${activeTheme.previewHeaderBg}`}>
                   <div className="flex items-center gap-2">
-                    <div className={`w-5 h-5 rounded-md ${activeTheme.iconBg} flex items-center justify-center border ${activeTheme.badgeBorder}`}>
-                      <ActiveIcon className={`w-3 h-3 ${activeTheme.iconColor}`} />
+                    <div className="w-6 h-6 rounded-md bg-white/20 backdrop-blur-xs flex items-center justify-center border border-white/30 text-white">
+                      <ActiveIcon className="w-3.5 h-3.5 text-white" />
                     </div>
-                    <span className="text-slate-800 font-black">{activeTheme.brandName} Live Document</span>
+                    <span className="text-white font-black">{activeTheme.brandName} Live Document</span>
                   </div>
-                  <span className={`px-2 py-0.5 text-[9px] font-extrabold uppercase rounded-full border ${activeTheme.previewBadgeBg} ${activeTheme.previewBadgeText} ${activeTheme.previewBadgeBorder}`}>
-                    {activeTheme.colorName} Identity
+                  <span className="px-2 py-0.5 text-[9px] font-black uppercase rounded-full bg-white text-slate-900 shadow-2xs">
+                    {activeTheme.colorName} Edition
                   </span>
                 </div>
 
                 {/* Styled interactive envelope container targeted uniquely for A4 printing */}
-                <div
-                  id="printable-envelope-card"
-                  className="bg-white rounded-xl shadow-md p-6 text-slate-900 border border-slate-200 overflow-hidden text-left relative selection:bg-violet-100"
-                  style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
-                >
-                  {/* LIVE COMPILED RICH MESSAGE BODY */}
-                  <div className="py-2 text-[13px] text-slate-800 leading-relaxed space-y-3 prose max-w-full">
-                    <div
-                      className="preview-compiled-body break-words select-text"
-                      dangerouslySetInnerHTML={{ __html: customBody ? customBody.replace(/{{invoice_table}}/gi, generateInvoiceTableHtml()) : '<p className="text-slate-400 italic">Body dynamic layout rendering inline...</p>' }}
-                    />
+                <div className="p-3">
+                  <div
+                    id="printable-envelope-card"
+                    className="bg-white rounded-xl shadow-md p-6 text-slate-900 border border-slate-200 overflow-hidden text-left relative selection:bg-violet-100"
+                    style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+                  >
+                    {/* LIVE COMPILED RICH MESSAGE BODY */}
+                    <div className="py-2 text-[13px] text-slate-800 leading-relaxed space-y-3 prose max-w-full">
+                      <div
+                        className="preview-compiled-body break-words select-text"
+                        dangerouslySetInnerHTML={{ __html: customBody ? customBody.replace(/{{invoice_table}}/gi, generateInvoiceTableHtml()) : '<p className="text-slate-400 italic">Body dynamic layout rendering inline...</p>' }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

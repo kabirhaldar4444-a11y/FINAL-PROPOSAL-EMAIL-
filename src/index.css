@@ -54,31 +54,16 @@ p, span, h1, h2, h3, h4, h5, h6, div, label, dt, dd, th, td, select, input, text
   }
 }
 
-/* Keep text white on colored buttons, gradient headers, and badges */
-.bg-violet-600, .bg-violet-600\/90, .bg-indigo-600, .bg-indigo-700, .bg-violet-700,
-.bg-gradient-to-r, .bg-gradient-to-tr, .bg-violet-750, .bg-violet-800, 
-.bg-emerald-600, .bg-rose-600, .bg-amber-600, .bg-blue-600, .bg-slate-900:has(button) {
-  p, span, h1, h2, h3, h4, h5, h6, div, label, button, a, svg {
-    &.text-white, &.text-slate-100, &.text-slate-50, &.text-slate-200, &.text-slate-300 {
-      color: #ffffff !important;
-    }
-  }
-}
-
-/* Specific solid primary action buttons keep pure white text */
-button[class*="bg-violet-600"],
-button[class*="bg-indigo-600"],
-button[class*="bg-emerald-600"],
-button[class*="bg-rose-600"],
-button[class*="from-violet-600"],
-button[class*="from-indigo-600"],
-a[class*="bg-violet-600"],
-a[class*="bg-indigo-600"] {
+/* Keep text white only on explicitly dark / colored button classes */
+button.bg-violet-600, button.bg-indigo-600, button.bg-indigo-700, button.bg-violet-700,
+button.bg-emerald-600, button.bg-rose-600, button.bg-red-600, button.bg-amber-600, button.bg-blue-600,
+button.bg-slate-800, button.bg-slate-900 {
   color: #ffffff !important;
   * {
     color: #ffffff !important;
   }
 }
+
 
 /* High-contrast action button accents */
 button.bg-violet-600\/30, button.bg-violet-600\/20 {
