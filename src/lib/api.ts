@@ -186,7 +186,6 @@ All processes — from enrollment to certification — are governed by clear, st
 <h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
-  <li style="margin-bottom: 4px;">Fill out this admission form: <a href="https://www.isuccessnode.in/admission" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.isuccessnode.in/admission</a></li>
   <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
   <li style="margin-bottom: 4px;">Receive your onboarding details and personalized session schedule within 24 working hours of payment confirmation.</li>
 </ol>
@@ -667,6 +666,18 @@ export const api = {
           changed = true;
         }
       }
+      // Sanitize any existing templates that have the old admission form link
+      updatedList = updatedList.map(t => {
+        if (t.htmlContent && t.htmlContent.includes('https://www.isuccessnode.in/admission')) {
+          changed = true;
+          return {
+            ...t,
+            htmlContent: t.htmlContent.replace(/<li[^>]*>Fill out this admission form:[\s\S]*?<\/li>/gi, '')
+          };
+        }
+        return t;
+      });
+
       if (!updatedList.some(t => t.id === 'temp_pmi_proposal')) {
         const pmiTemp = defaultTemplates.find(t => t.id === 'temp_pmi_proposal');
         if (pmiTemp) {
