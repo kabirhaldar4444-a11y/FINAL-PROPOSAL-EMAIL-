@@ -651,7 +651,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     if (calculatedGstValue > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined GST Tax (Adding Rupees)</td>
+            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined GST Tax</td>
             <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">₹${calculatedGstValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
