@@ -145,7 +145,7 @@ const defaultTemplates: EmailTemplate[] = [
 <p>Greetings from <strong>I-SUCCESSNODE (OPC) Private Limited</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
+<h3 style="margin-top: 24px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
 <p>At <strong>I-SUCCESSNODE</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -177,13 +177,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
@@ -203,7 +203,7 @@ All processes — from enrollment to certification — are governed by clear, st
 <p>Greetings from <strong>PMI Services</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
+<h3 style="margin-top: 24px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
 <p>At <strong>PMI Services</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -235,13 +235,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.pmiservices.org/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.pmiservices.org/contact</a></li>
@@ -262,7 +262,7 @@ All processes — from enrollment to certification — are governed by clear, st
 <p>Greetings from <strong>Elite Toolistic</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our elite professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Elite Services</h3>
+<h3 style="margin-top: 24px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">About Our Elite Services</h3>
 <p>At <strong>Elite Toolistic</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -294,13 +294,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.elitetoolistic.com/contact.html" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.elitetoolistic.com/contact.html</a></li>
@@ -321,7 +321,7 @@ All processes — from enrollment to certification — are governed by clear, st
 <p>Greetings from <strong>Harvard Training Services</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our premium professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Executive Services</h3>
+<h3 style="margin-top: 24px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">About Our Executive Services</h3>
 <p>At <strong>Harvard Training Services</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -353,13 +353,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.harvardlearning.in/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.harvardlearning.in/contact</a></li>
@@ -380,7 +380,7 @@ All processes — from enrollment to certification — are governed by clear, st
 <p>Greetings from <strong>Princeton Professional</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our advanced professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Strategic Services</h3>
+<h3 style="margin-top: 24px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">About Our Strategic Services</h3>
 <p>At <strong>Princeton Professional</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -412,13 +412,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://princetonprofessional.com/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://princetonprofessional.com/contact</a></li>

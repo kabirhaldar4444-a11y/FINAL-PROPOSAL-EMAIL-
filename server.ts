@@ -221,7 +221,7 @@ const initialDb = {
 <p>Greetings from <strong>I-SUCCESSNODE (OPC) Private Limited</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
+<h3 style="margin-top: 24px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
 <p>At <strong>I-SUCCESSNODE</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -253,13 +253,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrollment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #111827; border-bottom: 2px solid #111827; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
@@ -279,7 +279,7 @@ All processes — from enrollment to certification — are governed by clear, st
 <p>Greetings from <strong>PMI Services</strong>!</p>
 <p>It was a pleasure speaking with you earlier. We appreciate your interest in our professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
 
-<h3 style="margin-top: 24px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
+<h3 style="margin-top: 24px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">About Our Services</h3>
 <p>At <strong>PMI Services</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
 <p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
 <p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
@@ -311,13 +311,13 @@ The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Bo
 <p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
 All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+<h3 style="margin-top: 28px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
 
 {{invoice_table}}
 
 <p>Once the payment is completed, our onboarding team will immediately begin your enrollment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
 
-<h3 style="margin-top: 28px; color: #002d62; border-bottom: 2px solid #002d62; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<h3 style="margin-top: 28px; color: #6b21a8; border-bottom: 2px solid #6b21a8; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
 <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
   <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
   <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.pmiservices.org/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.pmiservices.org/contact</a></li>
@@ -328,6 +328,183 @@ All processes — from enrollment to certification — are governed by clear, st
 <p style="margin-top: 16px;">Should you have any questions or require assistance at any stage, please feel free to reach out. Our team is available to ensure you have a smooth and transparent onboarding experience.</p>
 <p>We look forward to welcoming you to <strong>PMI Services</strong>, where personal growth meets professional excellence.</p>`,
       category: 'Onboarding',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'temp_elite_proposal',
+      templateName: 'Elite Proposal program',
+      subject: 'Thank you for your interest - Proposal from Elite Toolistic',
+      htmlContent: `<p>Dear <strong>{{customer_name}}</strong>,</p>
+<p>Greetings from <strong>Elite Toolistic</strong>!</p>
+<p>It was a pleasure speaking with you earlier. We appreciate your interest in our elite professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
+
+<h3 style="margin-top: 24px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">About Our Elite Services</h3>
+<p>At <strong>Elite Toolistic</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
+<p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
+<p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
+
+<p><strong>Flexible Learning:</strong><br/>
+Learners receive comprehensive study materials and recorded video sessions within 6 working hours of enrollment — enabling self-paced learning anytime, anywhere.</p>
+
+<p style="margin-top: 12px;"><strong>Fast & Transparent Onboarding:</strong><br/>
+After enrollment, candidates receive an official invoice, study materials, and training access promptly.</p>
+
+<p style="margin-top: 12px;"><strong>Structured Evaluation:</strong><br/>
+A Pre-Board Exam is scheduled within 24–48 hours to help learners assess their preparation before the final assessment.</p>
+
+<p style="margin-top: 12px;"><strong>Recognized Certification:</strong><br/>
+Upon successful completion of the final online exam, learners receive a Final PC Softcopy Certificate verifying their successful training and certification status.</p>
+
+<p style="margin-top: 12px;"><strong>Digital Convenience:</strong><br/>
+All materials, exams, and certifications are delivered entirely online — ensuring quick, hassle-free access from any location.</p>
+
+<p style="margin-top: 12px;"><strong>Flexible Course Duration:</strong><br/>
+The complete program is designed to be completed within 60 to 90 days, giving learners the flexibility to balance studies with their schedules.</p>
+
+<p style="margin-top: 12px;"><strong>Fair Refund Policy:</strong><br/>
+A 90% refund is available before attempting any exam. A minimal 10% fee is retained to cover digital resources and content access.</p>
+
+<p style="margin-top: 12px;"><strong>Material Dispatch:</strong><br/>
+The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Board Exam attempt. The initial soft copy will represent that the customer is under training, once they complete the final exam, then only they will be getting the final certificates.</p>
+
+<p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
+All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
+
+<h3 style="margin-top: 28px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+
+{{invoice_table}}
+
+<p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
+
+<h3 style="margin-top: 28px; color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
+  <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
+  <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.elitetoolistic.com/contact.html" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.elitetoolistic.com/contact.html</a></li>
+  <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
+  <li style="margin-bottom: 4px;">Receive your onboarding details and personalized session schedule within 24 working hours of payment confirmation.</li>
+</ol>
+
+<p style="margin-top: 16px;">Should you have any questions or require assistance at any stage, please feel free to reach out. Our team is available to ensure you have a smooth and transparent onboarding experience.</p>
+<p>We look forward to welcoming you to <strong>Elite Toolistic</strong>, where personal growth meets professional excellence.</p>`,
+      category: 'Sponsorship',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'temp_harvard_proposal',
+      templateName: 'Harvard Proposal program',
+      subject: 'Thank you for your interest - Proposal from Harvard Training Services',
+      htmlContent: `<p>Dear <strong>{{customer_name}}</strong>,</p>
+<p>Greetings from <strong>Harvard Training Services</strong>!</p>
+<p>It was a pleasure speaking with you earlier. We appreciate your interest in our premium professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
+
+<h3 style="margin-top: 24px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">About Our Executive Services</h3>
+<p>At <strong>Harvard Training Services</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
+<p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
+<p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
+
+<p><strong>Flexible Learning:</strong><br/>
+Learners receive comprehensive study materials and recorded video sessions within 6 working hours of enrollment — enabling self-paced learning anytime, anywhere.</p>
+
+<p style="margin-top: 12px;"><strong>Fast & Transparent Onboarding:</strong><br/>
+After enrollment, candidates receive an official invoice, study materials, and training access promptly.</p>
+
+<p style="margin-top: 12px;"><strong>Structured Evaluation:</strong><br/>
+A Pre-Board Exam is scheduled within 24–48 hours to help learners assess their preparation before the final assessment.</p>
+
+<p style="margin-top: 12px;"><strong>Recognized Certification:</strong><br/>
+Upon successful completion of the final online exam, learners receive a Final PC Softcopy Certificate verifying their successful training and certification status.</p>
+
+<p style="margin-top: 12px;"><strong>Digital Convenience:</strong><br/>
+All materials, exams, and certifications are delivered entirely online — ensuring quick, hassle-free access from any location.</p>
+
+<p style="margin-top: 12px;"><strong>Flexible Course Duration:</strong><br/>
+The complete program is designed to be completed within 60 to 90 days, giving learners the flexibility to balance studies with their schedules.</p>
+
+<p style="margin-top: 12px;"><strong>Fair Refund Policy:</strong><br/>
+A 90% refund is available before attempting any exam. A minimal 10% fee is retained to cover digital resources and content access.</p>
+
+<p style="margin-top: 12px;"><strong>Material Dispatch:</strong><br/>
+The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Board Exam attempt. The initial soft copy will represent that the customer is under training, once they complete the final exam, then only they will be getting the final certificates.</p>
+
+<p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
+All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
+
+<h3 style="margin-top: 28px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+
+{{invoice_table}}
+
+<p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
+
+<h3 style="margin-top: 28px; color: #7f1d1d; border-bottom: 2px solid #7f1d1d; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
+  <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
+  <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://www.harvardlearning.in/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://www.harvardlearning.in/contact</a></li>
+  <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
+  <li style="margin-bottom: 4px;">Receive your onboarding details and personalized session schedule within 24 working hours of payment confirmation.</li>
+</ol>
+
+<p style="margin-top: 16px;">Should you have any questions or require assistance at any stage, please feel free to reach out. Our team is available to ensure you have a smooth and transparent onboarding experience.</p>
+<p>We look forward to welcoming you to <strong>Harvard Training Services</strong>, where personal growth meets professional excellence.</p>`,
+      category: 'Sponsorship',
+      createdAt: new Date().toISOString()
+    },
+    {
+      id: 'temp_princeton_proposal',
+      templateName: 'Princeton Proposal program',
+      subject: 'Thank you for your interest - Proposal from Princeton Professional',
+      htmlContent: `<p>Dear <strong>{{customer_name}}</strong>,</p>
+<p>Greetings from <strong>Princeton Professional</strong>!</p>
+<p>It was a pleasure speaking with you earlier. We appreciate your interest in our advanced professional training and development programs. As discussed, please find below the details of our proposal along with the course fee and next steps.</p>
+
+<h3 style="margin-top: 24px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">About Our Strategic Services</h3>
+<p>At <strong>Princeton Professional</strong>, we focus on helping individuals strengthen their personal and professional skills to achieve greater success in their careers. Our training model is designed for <strong>working professionals and aspirants</strong> who are looking to upgrade their confidence, communication, leadership, and overall personality to stand out in their professional journey.</p>
+<p>We understand that every learner has unique goals, so we ensure that each participant receives <strong>personalized guidance from industry experts and experienced trainers</strong>. Our flexible learning approach allows you to learn at your own pace, from anywhere, and at any time — without disrupting your work-life balance.</p>
+<p>From enhancing self-confidence and public presence to mastering decision-making and professional behaviour, we are committed to guiding you step-by-step toward your personal growth and career advancement.</p>
+
+<p><strong>Flexible Learning:</strong><br/>
+Learners receive comprehensive study materials and recorded video sessions within 6 working hours of enrollment — enabling self-paced learning anytime, anywhere.</p>
+
+<p style="margin-top: 12px;"><strong>Fast & Transparent Onboarding:</strong><br/>
+After enrollment, candidates receive an official invoice, study materials, and training access promptly.</p>
+
+<p style="margin-top: 12px;"><strong>Structured Evaluation:</strong><br/>
+A Pre-Board Exam is scheduled within 24–48 hours to help learners assess their preparation before the final assessment.</p>
+
+<p style="margin-top: 12px;"><strong>Recognized Certification:</strong><br/>
+Upon successful completion of the final online exam, learners receive a Final PC Softcopy Certificate verifying their successful training and certification status.</p>
+
+<p style="margin-top: 12px;"><strong>Digital Convenience:</strong><br/>
+All materials, exams, and certifications are delivered entirely online — ensuring quick, hassle-free access from any location.</p>
+
+<p style="margin-top: 12px;"><strong>Flexible Course Duration:</strong><br/>
+The complete program is designed to be completed within 60 to 90 days, giving learners the flexibility to balance studies with their schedules.</p>
+
+<p style="margin-top: 12px;"><strong>Fair Refund Policy:</strong><br/>
+A 90% refund is available before attempting any exam. A minimal 10% fee is retained to cover digital resources and content access.</p>
+
+<p style="margin-top: 12px;"><strong>Material Dispatch:</strong><br/>
+The Initial PC Softcopy will be delivered within 48 to 72 hours after the Pre-Board Exam attempt. The initial soft copy will represent that the customer is under training, once they complete the final exam, then only they will be getting the final certificates.</p>
+
+<p style="margin-top: 12px;"><strong>Commitment to Transparency:</strong><br/>
+All processes — from enrollment to certification — are governed by clear, structured policies to ensure learners receive reliable, transparent service throughout their journey.</p>
+
+<h3 style="margin-top: 28px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">Proposed Plan & Fee Details</h3>
+
+{{invoice_table}}
+
+<p>Once the payment is completed, our onboarding team will immediately begin your enrolment process. You’ll be connected with your dedicated mentor, who will assist you throughout your training journey.</p>
+
+<h3 style="margin-top: 28px; color: #0f2942; border-bottom: 2px solid #0f2942; padding-bottom: 6px; font-size: 16px;">Next Steps</h3>
+<ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; margin-top: 10px;">
+  <li style="margin-bottom: 4px;">Review this proposal and confirm your enrollment.</li>
+  <li style="margin-bottom: 4px;">Fill out this order form: <a href="https://princetonprofessional.com/contact" style="color: #4f46e5; text-decoration: underline; font-weight: 500;">https://princetonprofessional.com/contact</a></li>
+  <li style="margin-bottom: 4px;">Proceed with payment using your preferred payment method.</li>
+  <li style="margin-bottom: 4px;">Receive your onboarding details and personalized session schedule within 24 working hours of payment confirmation.</li>
+</ol>
+
+<p style="margin-top: 16px;">Should you have any questions or require assistance at any stage, please feel free to reach out. Our team is available to ensure you have a smooth and transparent onboarding experience.</p>
+<p>We look forward to welcoming you to <strong>Princeton Professional</strong>, where personal growth meets professional excellence.</p>`,
+      category: 'Sponsorship',
       createdAt: new Date().toISOString()
     }
   ],
@@ -773,6 +950,59 @@ app.get('/api/email-logs', (req, res) => {
   res.json(result);
 });
 
+function getServerProgramTableTheme(templateId = '', templateName = '', companyName = '') {
+  const combined = `${templateId} ${templateName} ${companyName}`.toLowerCase();
+  if (combined.includes('pmi')) {
+    return {
+      primaryHeaderBg: '#581c87',
+      subtotalBg: '#faf5ff',
+      grandTotalBg: '#059669',
+      payableRowBg: '#581c87',
+      payableHighlight: '#059669',
+      payableBorder: '#6b21a8'
+    };
+  }
+  if (combined.includes('elite')) {
+    return {
+      primaryHeaderBg: '#1e3a8a',
+      subtotalBg: '#f0f9ff',
+      grandTotalBg: '#2563eb',
+      payableRowBg: '#1e1b4b',
+      payableHighlight: '#2563eb',
+      payableBorder: '#2563eb'
+    };
+  }
+  if (combined.includes('harvard')) {
+    return {
+      primaryHeaderBg: '#7f1d1d',
+      subtotalBg: '#fffbeb',
+      grandTotalBg: '#b45309',
+      payableRowBg: '#7f1d1d',
+      payableHighlight: '#b45309',
+      payableBorder: '#7f1d1d'
+    };
+  }
+  if (combined.includes('princeton')) {
+    return {
+      primaryHeaderBg: '#0f2942',
+      subtotalBg: '#fff7ed',
+      grandTotalBg: '#ea580c',
+      payableRowBg: '#0f2942',
+      payableHighlight: '#ea580c',
+      payableBorder: '#0f2942'
+    };
+  }
+  // Default / I-SUCCESSNODE (Jet black & Onyx)
+  return {
+    primaryHeaderBg: '#111827',
+    subtotalBg: '#f8fafc',
+    grandTotalBg: '#1f2937',
+    payableRowBg: '#000000',
+    payableHighlight: '#000000',
+    payableBorder: '#000000'
+  };
+}
+
 // POST Send Email (Parses & renders templates server-side, interacts with optional Resend API)
 app.post('/api/send-email', async (req, res) => {
   const { customerId, invoiceId, templateId, customSubject, customBody } = req.body;
@@ -793,11 +1023,14 @@ app.post('/api/send-email', async (req, res) => {
   const programNames = invoice.items.map(it => it.programName).join(', ');
   const programDetails = invoice.items.map(it => `${it.programName} (${it.duration} @ ₹${it.total})`).join(', ');
 
-  // Dynamic High-Fidelity HTML Table for I-SUCCESSNODE styling
+  const templateObj = templateId ? db.emailTemplates.find(t => t.id === templateId) : null;
+  const tblTheme = getServerProgramTableTheme(templateId || '', templateObj?.templateName || '', customer.companyName || '');
+
+  // Dynamic High-Fidelity HTML Table styled smartly to logo colors
   let invoiceTableHtml = `
     <table style="width: 55%; margin: 20px 0; min-width: 320px; border-collapse: collapse; border: 1.5px solid #000000; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
       <thead>
-        <tr style="background-color: #002d62; color: #ffffff;">
+        <tr style="background-color: ${tblTheme.primaryHeaderBg}; color: #ffffff;">
           <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 13px; text-transform: uppercase;">Selected Programs</th>
           <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 13px; text-transform: uppercase;">Duration</th>
           <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 13px; text-transform: uppercase;">Price (Excl. Tax)</th>
@@ -827,16 +1060,16 @@ app.post('/api/send-email', async (req, res) => {
 
   invoiceTableHtml += `
         <tr style="text-align: center;">
-          <td colspan="4" style="background-color: #e07a22; color: #000000; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Total</td>
+          <td colspan="4" style="background-color: ${tblTheme.grandTotalBg}; color: #ffffff; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Total</td>
           <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px;">₹${Number(invoice.grandTotal || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
         <tr style="text-align: center;">
-          <td colspan="4" style="background-color: #e07a22; color: #000000; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Sponsorship</td>
+          <td colspan="4" style="background-color: ${tblTheme.subtotalBg}; color: #000000; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Sponsorship</td>
           <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px;">₹${Number(invoice.sponsorshipAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
         <tr style="text-align: center;">
-          <td colspan="4" style="background-color: #e07a22; color: #000000; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Total Payable Amount</td>
-          <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px;">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          <td colspan="4" style="background-color: ${tblTheme.payableRowBg}; color: #ffffff; font-weight: bold; text-align: center; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Total Payable Amount</td>
+          <td style="padding: 10px; border: 2.5px solid ${tblTheme.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; color: ${tblTheme.payableHighlight};">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
       </tbody>
     </table>

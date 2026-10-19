@@ -18,6 +18,25 @@ interface UnifiedMailerProps {
   setActiveTab?: (tab: 'proposal' | 'templates' | 'customers' | 'logs' | 'settings') => void;
 }
 
+export interface ProgramTableTheme {
+  primaryHeaderBg: string;
+  primaryHeaderText: string;
+  tableBorder: string;
+  headingColor: string;
+  subtotalBg: string;
+  subtotalText: string;
+  grandTotalBg: string;
+  grandTotalText: string;
+  sponsorshipText: string;
+  payableRowBg: string;
+  payableRowText: string;
+  payableHighlight: string;
+  payableBorder: string;
+  pdfPrimaryHeader: [number, number, number];
+  pdfAccentDivider: [number, number, number];
+  pdfPayableText: [number, number, number];
+}
+
 export interface ProgramThemeConfig {
   id: string;
   brandName: string;
@@ -49,20 +68,22 @@ export interface ProgramThemeConfig {
   activePillBorder: string;
   iconColor: string;
   iconBg: string;
+  // Smart Table Styling
+  table: ProgramTableTheme;
 }
 
-export const getProgramTheme = (templateId: string = '', templateName: string = ''): ProgramThemeConfig => {
-  const lowerName = (templateName || '').toLowerCase();
-  const lowerId = (templateId || '').toLowerCase();
+export const getProgramTheme = (templateId: string = '', templateName: string = '', companyName: string = ''): ProgramThemeConfig => {
+  const combined = `${templateId} ${templateName} ${companyName}`.toLowerCase();
 
-  if (lowerId.includes('pmi') || lowerName.includes('pmi')) {
+  // 1. PMI Services (Purple shield with green star / purple "PMI" & emerald "SERVICES")
+  if (combined.includes('pmi')) {
     return {
       id: 'pmi',
       brandName: 'PMI Services',
       subtitle: 'PMI Global Accreditation Proposal Framework',
       icon: Zap,
-      colorName: 'Purple',
-      bannerGradient: 'bg-gradient-to-r from-purple-700 via-violet-600 to-indigo-700',
+      colorName: 'Purple & Emerald',
+      bannerGradient: 'bg-gradient-to-r from-purple-800 via-violet-700 to-emerald-700',
       builderBg: 'bg-gradient-to-b from-purple-100/90 via-purple-50/70 to-white',
       builderBorder: 'border-2 border-purple-400',
       chipContainerBg: 'bg-purple-100/60',
@@ -70,179 +91,288 @@ export const getProgramTheme = (templateId: string = '', templateName: string = 
       inputBorder: 'border-purple-300',
       inputFocus: 'focus:border-purple-600 focus:ring-2 focus:ring-purple-400/30',
       previewBorder: 'border-2 border-purple-400',
-      previewHeaderBg: 'bg-gradient-to-r from-purple-700 to-violet-700 text-white',
+      previewHeaderBg: 'bg-gradient-to-r from-purple-800 to-emerald-700 text-white',
       previewBadgeBg: 'bg-white',
       previewBadgeText: 'text-purple-900',
       previewBadgeBorder: 'border-purple-200',
-      badgeBg: 'bg-purple-600',
+      badgeBg: 'bg-purple-700',
       badgeText: 'text-white',
-      badgeBorder: 'border-purple-700',
-      accentBar: 'bg-purple-600',
-      activePillBg: 'bg-purple-600 text-white border-purple-700 shadow-xs',
+      badgeBorder: 'border-purple-800',
+      accentBar: 'bg-purple-700',
+      activePillBg: 'bg-purple-700 text-white border-purple-800 shadow-xs',
       activePillText: 'text-purple-700',
       activePillBorder: 'border-purple-400',
       iconColor: 'text-purple-700',
-      iconBg: 'bg-purple-200'
+      iconBg: 'bg-purple-100',
+      table: {
+        primaryHeaderBg: '#581c87', // Deep Royal Purple
+        primaryHeaderText: '#ffffff',
+        tableBorder: '#000000',
+        headingColor: '#6b21a8',
+        subtotalBg: '#faf5ff',
+        subtotalText: '#000000',
+        grandTotalBg: '#059669', // Emerald Green Accent
+        grandTotalText: '#ffffff',
+        sponsorshipText: '#059669',
+        payableRowBg: '#581c87',
+        payableRowText: '#ffffff',
+        payableHighlight: '#059669',
+        payableBorder: '#6b21a8',
+        pdfPrimaryHeader: [88, 28, 135],
+        pdfAccentDivider: [5, 150, 105],
+        pdfPayableText: [5, 150, 105]
+      }
     };
   }
 
-  if (lowerId.includes('elite') || lowerName.includes('elite')) {
+  // 2. Elite Toolistic (Vibrant Cyan-to-Blue Pill Gradient with Dark Blue / Indigo text)
+  if (combined.includes('elite')) {
     return {
       id: 'elite',
       brandName: 'Elite Toolistic',
       subtitle: 'Elite Toolistic Executive Proposal Framework',
       icon: Crown,
-      colorName: 'Emerald',
-      bannerGradient: 'bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-800',
-      builderBg: 'bg-gradient-to-b from-emerald-100/90 via-emerald-50/70 to-white',
-      builderBorder: 'border-2 border-emerald-400',
-      chipContainerBg: 'bg-emerald-100/60',
-      chipContainerBorder: 'border-emerald-300',
-      inputBorder: 'border-emerald-300',
-      inputFocus: 'focus:border-emerald-600 focus:ring-2 focus:ring-emerald-400/30',
-      previewBorder: 'border-2 border-emerald-400',
-      previewHeaderBg: 'bg-gradient-to-r from-emerald-700 to-teal-700 text-white',
+      colorName: 'Royal Blue & Cyan',
+      bannerGradient: 'bg-gradient-to-r from-blue-900 via-indigo-700 to-cyan-600',
+      builderBg: 'bg-gradient-to-b from-blue-100/90 via-sky-50/70 to-white',
+      builderBorder: 'border-2 border-blue-400',
+      chipContainerBg: 'bg-blue-100/60',
+      chipContainerBorder: 'border-blue-300',
+      inputBorder: 'border-blue-300',
+      inputFocus: 'focus:border-blue-600 focus:ring-2 focus:ring-blue-400/30',
+      previewBorder: 'border-2 border-blue-400',
+      previewHeaderBg: 'bg-gradient-to-r from-blue-800 to-indigo-800 text-white',
       previewBadgeBg: 'bg-white',
-      previewBadgeText: 'text-emerald-900',
-      previewBadgeBorder: 'border-emerald-200',
-      badgeBg: 'bg-emerald-600',
+      previewBadgeText: 'text-blue-900',
+      previewBadgeBorder: 'border-blue-200',
+      badgeBg: 'bg-blue-600',
       badgeText: 'text-white',
-      badgeBorder: 'border-emerald-700',
-      accentBar: 'bg-emerald-600',
-      activePillBg: 'bg-emerald-600 text-white border-emerald-700 shadow-xs',
-      activePillText: 'text-emerald-700',
-      activePillBorder: 'border-emerald-400',
-      iconColor: 'text-emerald-700',
-      iconBg: 'bg-emerald-200'
+      badgeBorder: 'border-blue-700',
+      accentBar: 'bg-blue-600',
+      activePillBg: 'bg-blue-600 text-white border-blue-700 shadow-xs',
+      activePillText: 'text-blue-700',
+      activePillBorder: 'border-blue-400',
+      iconColor: 'text-blue-700',
+      iconBg: 'bg-blue-100',
+      table: {
+        primaryHeaderBg: '#1e3a8a', // Deep Royal Tech Navy Blue
+        primaryHeaderText: '#ffffff',
+        tableBorder: '#000000',
+        headingColor: '#1e3a8a',
+        subtotalBg: '#f0f9ff', // Light Ice Cyan
+        subtotalText: '#000000',
+        grandTotalBg: '#2563eb', // Electric Royal Blue
+        grandTotalText: '#ffffff',
+        sponsorshipText: '#0284c7', // Cyan / Sky Blue
+        payableRowBg: '#1e1b4b', // Deep Midnight Indigo
+        payableRowText: '#ffffff',
+        payableHighlight: '#2563eb',
+        payableBorder: '#2563eb',
+        pdfPrimaryHeader: [30, 58, 138],
+        pdfAccentDivider: [37, 99, 235],
+        pdfPayableText: [37, 99, 235]
+      }
     };
   }
 
-  if (lowerId.includes('harvard') || lowerName.includes('harvard')) {
+  // 3. Harvard Learning Professional Services (Harvard Crimson crest with Antique Gold / Bronze details)
+  if (combined.includes('harvard')) {
     return {
       id: 'harvard',
       brandName: 'Harvard Training',
       subtitle: 'Harvard Executive Blueprint Proposal Framework',
       icon: Landmark,
-      colorName: 'Crimson',
-      bannerGradient: 'bg-gradient-to-r from-rose-700 via-red-600 to-rose-800',
-      builderBg: 'bg-gradient-to-b from-rose-100/90 via-rose-50/70 to-white',
+      colorName: 'Crimson & Gold',
+      bannerGradient: 'bg-gradient-to-r from-red-950 via-rose-900 to-amber-700',
+      builderBg: 'bg-gradient-to-b from-rose-100/90 via-amber-50/50 to-white',
       builderBorder: 'border-2 border-rose-400',
       chipContainerBg: 'bg-rose-100/60',
       chipContainerBorder: 'border-rose-300',
       inputBorder: 'border-rose-300',
-      inputFocus: 'focus:border-rose-600 focus:ring-2 focus:ring-rose-400/30',
+      inputFocus: 'focus:border-rose-700 focus:ring-2 focus:ring-rose-400/30',
       previewBorder: 'border-2 border-rose-400',
-      previewHeaderBg: 'bg-gradient-to-r from-rose-700 to-red-700 text-white',
+      previewHeaderBg: 'bg-gradient-to-r from-rose-950 to-amber-700 text-white',
       previewBadgeBg: 'bg-white',
-      previewBadgeText: 'text-rose-900',
+      previewBadgeText: 'text-rose-950',
       previewBadgeBorder: 'border-rose-200',
-      badgeBg: 'bg-rose-600',
+      badgeBg: 'bg-rose-900',
       badgeText: 'text-white',
-      badgeBorder: 'border-rose-700',
-      accentBar: 'bg-rose-600',
-      activePillBg: 'bg-rose-600 text-white border-rose-700 shadow-xs',
-      activePillText: 'text-rose-700',
+      badgeBorder: 'border-rose-950',
+      accentBar: 'bg-rose-900',
+      activePillBg: 'bg-rose-900 text-white border-amber-600 shadow-xs',
+      activePillText: 'text-rose-900',
       activePillBorder: 'border-rose-400',
-      iconColor: 'text-rose-700',
-      iconBg: 'bg-rose-200'
+      iconColor: 'text-rose-900',
+      iconBg: 'bg-rose-100',
+      table: {
+        primaryHeaderBg: '#7f1d1d', // Authentic Harvard Crimson
+        primaryHeaderText: '#ffffff',
+        tableBorder: '#000000',
+        headingColor: '#7f1d1d',
+        subtotalBg: '#fffbeb', // Warm Gold Tint / Ivory
+        subtotalText: '#000000',
+        grandTotalBg: '#b45309', // Antique Gold / Bronze
+        grandTotalText: '#ffffff',
+        sponsorshipText: '#b45309',
+        payableRowBg: '#7f1d1d',
+        payableRowText: '#ffffff',
+        payableHighlight: '#b45309',
+        payableBorder: '#7f1d1d',
+        pdfPrimaryHeader: [127, 29, 29],
+        pdfAccentDivider: [180, 83, 9],
+        pdfPayableText: [180, 83, 9]
+      }
     };
   }
 
-  if (lowerId.includes('princeton') || lowerName.includes('princeton')) {
+  // 4. Princeton Professional (Princeton Midnight Navy shield + Princeton Warm Orange)
+  if (combined.includes('princeton')) {
     return {
       id: 'princeton',
       brandName: 'Princeton Professional',
       subtitle: 'Princeton Strategic Certification Proposal Framework',
       icon: Trophy,
-      colorName: 'Amber',
-      bannerGradient: 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700',
-      builderBg: 'bg-gradient-to-b from-amber-100/90 via-amber-50/70 to-white',
-      builderBorder: 'border-2 border-amber-400',
-      chipContainerBg: 'bg-amber-100/60',
-      chipContainerBorder: 'border-amber-300',
-      inputBorder: 'border-amber-300',
-      inputFocus: 'focus:border-amber-600 focus:ring-2 focus:ring-amber-400/30',
-      previewBorder: 'border-2 border-amber-400',
-      previewHeaderBg: 'bg-gradient-to-r from-amber-600 to-orange-700 text-white',
+      colorName: 'Navy & Orange',
+      bannerGradient: 'bg-gradient-to-r from-slate-950 via-blue-950 to-orange-600',
+      builderBg: 'bg-gradient-to-b from-orange-100/70 via-slate-50/70 to-white',
+      builderBorder: 'border-2 border-orange-400',
+      chipContainerBg: 'bg-orange-100/60',
+      chipContainerBorder: 'border-orange-300',
+      inputBorder: 'border-orange-300',
+      inputFocus: 'focus:border-orange-600 focus:ring-2 focus:ring-orange-400/30',
+      previewBorder: 'border-2 border-orange-400',
+      previewHeaderBg: 'bg-gradient-to-r from-blue-950 to-orange-600 text-white',
       previewBadgeBg: 'bg-white',
-      previewBadgeText: 'text-amber-900',
-      previewBadgeBorder: 'border-amber-200',
-      badgeBg: 'bg-amber-600',
-      badgeText: 'text-white',
-      badgeBorder: 'border-amber-700',
-      accentBar: 'bg-amber-600',
-      activePillBg: 'bg-amber-600 text-white border-amber-700 shadow-xs',
-      activePillText: 'text-amber-700',
-      activePillBorder: 'border-amber-400',
-      iconColor: 'text-amber-700',
-      iconBg: 'bg-amber-200'
+      previewBadgeText: 'text-orange-950',
+      previewBadgeBorder: 'border-orange-200',
+      badgeBg: 'bg-blue-950',
+      badgeText: 'text-orange-400',
+      badgeBorder: 'border-orange-600',
+      accentBar: 'bg-orange-600',
+      activePillBg: 'bg-blue-950 text-white border-orange-500 shadow-xs',
+      activePillText: 'text-orange-600',
+      activePillBorder: 'border-orange-400',
+      iconColor: 'text-orange-600',
+      iconBg: 'bg-orange-100',
+      table: {
+        primaryHeaderBg: '#0f2942', // Princeton Midnight Navy
+        primaryHeaderText: '#ffffff',
+        tableBorder: '#000000',
+        headingColor: '#0f2942',
+        subtotalBg: '#fff7ed', // Princeton Orange Soft Cream
+        subtotalText: '#000000',
+        grandTotalBg: '#ea580c', // Princeton Orange
+        grandTotalText: '#ffffff',
+        sponsorshipText: '#ea580c',
+        payableRowBg: '#0f2942',
+        payableRowText: '#ffffff',
+        payableHighlight: '#ea580c',
+        payableBorder: '#0f2942',
+        pdfPrimaryHeader: [15, 41, 66],
+        pdfAccentDivider: [234, 88, 12],
+        pdfPayableText: [234, 88, 12]
+      }
     };
   }
 
-  // Default to I-SUCCESSNODE (Indigo)
-  if (lowerId.includes('isuccessnode') || lowerName.includes('isuccessnode') || lowerName.includes('program proposal')) {
+  // 5. I-SUCCESSNODE (High-Contrast Monochrome Onyx / Pure Jet Black with Lightning Bolt)
+  if (combined.includes('isuccessnode') || combined.includes('i-successnode') || combined.includes('isuccess') || combined.includes('program proposal')) {
     return {
       id: 'isuccessnode',
       brandName: 'I-SUCCESSNODE',
       subtitle: 'Official I-SUCCESSNODE Training Program Proposal',
       icon: GraduationCap,
-      colorName: 'Indigo',
-      bannerGradient: 'bg-gradient-to-r from-indigo-700 via-blue-600 to-indigo-800',
-      builderBg: 'bg-gradient-to-b from-indigo-100/90 via-indigo-50/70 to-white',
-      builderBorder: 'border-2 border-indigo-400',
-      chipContainerBg: 'bg-indigo-100/60',
-      chipContainerBorder: 'border-indigo-300',
-      inputBorder: 'border-indigo-300',
-      inputFocus: 'focus:border-indigo-600 focus:ring-2 focus:ring-indigo-400/30',
-      previewBorder: 'border-2 border-indigo-400',
-      previewHeaderBg: 'bg-gradient-to-r from-indigo-700 to-blue-700 text-white',
+      colorName: 'Monochrome Onyx',
+      bannerGradient: 'bg-gradient-to-r from-slate-950 via-gray-900 to-zinc-900',
+      builderBg: 'bg-gradient-to-b from-slate-100/90 via-gray-50/70 to-white',
+      builderBorder: 'border-2 border-slate-400',
+      chipContainerBg: 'bg-slate-100/70',
+      chipContainerBorder: 'border-slate-300',
+      inputBorder: 'border-slate-300',
+      inputFocus: 'focus:border-slate-800 focus:ring-2 focus:ring-slate-400/30',
+      previewBorder: 'border-2 border-slate-400',
+      previewHeaderBg: 'bg-gradient-to-r from-slate-950 to-gray-900 text-white',
       previewBadgeBg: 'bg-white',
-      previewBadgeText: 'text-indigo-900',
-      previewBadgeBorder: 'border-indigo-200',
-      badgeBg: 'bg-indigo-600',
+      previewBadgeText: 'text-slate-950',
+      previewBadgeBorder: 'border-slate-200',
+      badgeBg: 'bg-slate-900',
       badgeText: 'text-white',
-      badgeBorder: 'border-indigo-700',
-      accentBar: 'bg-indigo-600',
-      activePillBg: 'bg-indigo-600 text-white border-indigo-700 shadow-xs',
-      activePillText: 'text-indigo-700',
-      activePillBorder: 'border-indigo-400',
-      iconColor: 'text-indigo-700',
-      iconBg: 'bg-indigo-200'
+      badgeBorder: 'border-black',
+      accentBar: 'bg-slate-900',
+      activePillBg: 'bg-slate-900 text-white border-black shadow-xs',
+      activePillText: 'text-slate-900',
+      activePillBorder: 'border-slate-400',
+      iconColor: 'text-slate-900',
+      iconBg: 'bg-slate-200',
+      table: {
+        primaryHeaderBg: '#111827', // Crisp Jet Black
+        primaryHeaderText: '#ffffff',
+        tableBorder: '#000000',
+        headingColor: '#111827',
+        subtotalBg: '#f8fafc',
+        subtotalText: '#000000',
+        grandTotalBg: '#1f2937', // Carbon Graphite
+        grandTotalText: '#ffffff',
+        sponsorshipText: '#374151',
+        payableRowBg: '#000000',
+        payableRowText: '#ffffff',
+        payableHighlight: '#000000',
+        payableBorder: '#000000',
+        pdfPrimaryHeader: [17, 24, 39],
+        pdfAccentDivider: [31, 41, 55],
+        pdfPayableText: [17, 24, 39]
+      }
     };
   }
 
-  // Generic custom template (Sky / Blue)
+  // Generic custom template (Sky / Navy Modern)
   return {
     id: 'custom',
     brandName: templateName || 'Custom Program',
     subtitle: 'Custom Email Template Blueprint',
     icon: Mail,
-    colorName: 'Sky',
-    bannerGradient: 'bg-gradient-to-r from-cyan-700 via-sky-600 to-blue-700',
-    builderBg: 'bg-gradient-to-b from-sky-100/90 via-sky-50/70 to-white',
-    builderBorder: 'border-2 border-sky-400',
-    chipContainerBg: 'bg-sky-100/60',
-    chipContainerBorder: 'border-sky-300',
-    inputBorder: 'border-sky-300',
-    inputFocus: 'focus:border-sky-600 focus:ring-2 focus:ring-sky-400/30',
-    previewBorder: 'border-2 border-sky-400',
-    previewHeaderBg: 'bg-gradient-to-r from-sky-700 to-cyan-700 text-white',
+    colorName: 'Slate & Indigo',
+    bannerGradient: 'bg-gradient-to-r from-slate-900 via-indigo-900 to-slate-900',
+    builderBg: 'bg-gradient-to-b from-indigo-50/80 via-slate-50/70 to-white',
+    builderBorder: 'border-2 border-indigo-300',
+    chipContainerBg: 'bg-indigo-50',
+    chipContainerBorder: 'border-indigo-200',
+    inputBorder: 'border-slate-300',
+    inputFocus: 'focus:border-indigo-600 focus:ring-2 focus:ring-indigo-400/30',
+    previewBorder: 'border-2 border-indigo-300',
+    previewHeaderBg: 'bg-gradient-to-r from-slate-900 to-indigo-900 text-white',
     previewBadgeBg: 'bg-white',
-    previewBadgeText: 'text-sky-900',
-    previewBadgeBorder: 'border-sky-200',
-    badgeBg: 'bg-sky-600',
+    previewBadgeText: 'text-indigo-950',
+    previewBadgeBorder: 'border-indigo-200',
+    badgeBg: 'bg-indigo-700',
     badgeText: 'text-white',
-    badgeBorder: 'border-sky-700',
-    accentBar: 'bg-sky-600',
-    activePillBg: 'bg-sky-600 text-white border-sky-700 shadow-xs',
-    activePillText: 'text-sky-700',
-    activePillBorder: 'border-sky-400',
-    iconColor: 'text-sky-700',
-    iconBg: 'bg-sky-200'
+    badgeBorder: 'border-indigo-800',
+    accentBar: 'bg-indigo-600',
+    activePillBg: 'bg-indigo-600 text-white border-indigo-700 shadow-xs',
+    activePillText: 'text-indigo-700',
+    activePillBorder: 'border-indigo-400',
+    iconColor: 'text-indigo-700',
+    iconBg: 'bg-indigo-100',
+    table: {
+      primaryHeaderBg: '#0f172a',
+      primaryHeaderText: '#ffffff',
+      tableBorder: '#000000',
+      headingColor: '#0f172a',
+      subtotalBg: '#f8fafc',
+      subtotalText: '#000000',
+      grandTotalBg: '#4f46e5',
+      grandTotalText: '#ffffff',
+      sponsorshipText: '#059669',
+      payableRowBg: '#0f172a',
+      payableRowText: '#ffffff',
+      payableHighlight: '#4f46e5',
+      payableBorder: '#4f46e5',
+      pdfPrimaryHeader: [15, 23, 42],
+      pdfAccentDivider: [79, 70, 229],
+      pdfPayableText: [79, 70, 229]
+    }
   };
 };
-
-
 
 // Preset Course Options for rapid click-to-add row actions
 interface ProgramPreset {
@@ -603,17 +733,21 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
   };
 
   // --- DYNAMIC PREVIEW COMPILING ---
-  const generateInvoiceTableHtml = () => {
+  const generateInvoiceTableHtml = (overrideTheme?: ProgramTableTheme) => {
+    const activeTemplate = templates.find(t => t.id === selectedTemplateId);
+    const activeTheme = getProgramTheme(activeTemplate?.id || selectedTemplateId, activeTemplate?.templateName || '', companyName || branding?.companyName);
+    const tbl = overrideTheme || activeTheme.table;
+
     let ht = `
       <div style="width: 100%; overflow-x: auto; margin: 20px 0; -webkit-overflow-scrolling: touch; text-align: left;">
-        <table style="width: 55%; min-width: 320px; margin: 20px 0; border-collapse: collapse; border: 1.5px solid #000000; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
+        <table style="width: 55%; min-width: 320px; margin: 20px 0; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
           <thead>
-            <tr style="background-color: #002d62; color: #ffffff;">
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Duration</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Price (Excl. Tax)</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">GST 18% in Rs</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Total</th>
+            <tr style="background-color: ${tbl.primaryHeaderBg}; color: ${tbl.primaryHeaderText};">
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Duration</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Price (Excl. Tax)</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">GST 18% in Rs</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -632,27 +766,27 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
 
       ht += `
           <tr style="background-color: #ffffff; text-align: center;">
-            <td style="padding: 10px; border: 1.5px solid #000000; text-align: left; vertical-align: top;">${progNameCellContent}</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; vertical-align: top;">${item.duration || '90 Days'}</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; vertical-align: top;">${priceVal}</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; vertical-align: top; font-weight: bold;">${gstAmtVal}</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; vertical-align: top; font-weight: bold;">${totalVal}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; vertical-align: top;">${progNameCellContent}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top;">${item.duration || '90 Days'}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top;">${priceVal}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold;">${gstAmtVal}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold;">${totalVal}</td>
           </tr>
       `;
     });
 
     ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Subtotal (excl. Tax)</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Subtotal (excl. Tax)</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
     `;
 
     if (calculatedGstValue > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined GST Tax</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">₹${calculatedGstValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined GST Tax</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">₹${calculatedGstValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
@@ -661,28 +795,28 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
       const avgDiscPercent = rawBaseSubtotal > 0 ? Math.round((discountReductionAmount / rawBaseSubtotal) * 100) : 0;
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined Rebate Discount (${avgDiscPercent}%)</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${discountReductionAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined Rebate Discount (${avgDiscPercent}%)</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${discountReductionAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
 
     ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #e07a22; color: #ffffff; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (incl. GST)</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold;">₹${computedGrandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (incl. GST)</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold;">₹${computedGrandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
     `;
 
     if (grandDiscountAmount > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #fafaf9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">${grandDiscountLabel}</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${grandDiscountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: #fafaf9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">${grandDiscountLabel}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${grandDiscountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #f1f5f9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (After Discount)</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold; color: #000000;">₹${grandTotalAfterDiscount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (After Discount)</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold; color: #000000;">₹${grandTotalAfterDiscount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
@@ -690,16 +824,16 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     if (applySponsorship && calculatedSponsorshipBenefit > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #e5e7eb; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 12px; text-transform: uppercase;">Sponsorship Coverage (50%)</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #047857;">₹${calculatedSponsorshipBenefit.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: #e5e7eb; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Sponsorship Coverage (50%)</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: ${tbl.sponsorshipText}; font-weight: bold;">₹${calculatedSponsorshipBenefit.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
 
     ht += `
           <tr style="text-align: center; background-color: #fffbeb;">
-            <td colspan="4" style="background-color: #002d62; color: #ffffff; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px; font-size: 13px; text-transform: uppercase;">Total Payable Amount</td>
-            <td style="padding: 10px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 14px; color: #b45309; border: 2.5px solid #002d62;">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 13px; text-transform: uppercase;">Total Payable Amount</td>
+            <td style="padding: 10px; border: 2.5px solid ${tbl.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 14px; color: ${tbl.payableHighlight};">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
         </tbody>
       </table>
@@ -718,7 +852,10 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
 {{invoice_table}}`
     };
 
-    const invoiceTableHtml = generateInvoiceTableHtml();
+    const activeTheme = getProgramTheme(rawTemplateObj.id || selectedTemplateId, rawTemplateObj.templateName || '', companyName || branding?.companyName);
+    const tbl = activeTheme.table;
+
+    const invoiceTableHtml = generateInvoiceTableHtml(tbl);
     const firstProgDetails = courseRowsCalculated.map(it => `${it.programName} (${it.duration} @ ₹${Number(it.total).toLocaleString('en-IN')})`).join(', ');
 
     const replacerFn = (text: string, includeTable = true) => {
@@ -737,6 +874,12 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
         .replace(/{{company_website}}/gi, branding.website)
         .replace(/{{current_date}}/gi, new Date().toLocaleDateString('en-IN'))
         .replace(/{{email_signature}}/gi, branding.emailSignature);
+
+      // Smartly update headings like "Proposed Plan & Fee Details", "About Our Services", "Next Steps" to match the active brand logo color!
+      res = res
+        .replace(/color:\s*#[0-9a-fA-F]{3,6}([^"]*?border-bottom:\s*2px solid\s*)#[0-9a-fA-F]{3,6}/gi, `color: ${tbl.headingColor}$1${tbl.headingColor}`)
+        .replace(/color:\s*#002d62/gi, `color: ${tbl.headingColor}`)
+        .replace(/solid\s*#002d62/gi, `solid ${tbl.headingColor}`);
 
       if (includeTable) {
         res = res.replace(/{{invoice_table}}/gi, invoiceTableHtml);
@@ -1052,22 +1195,26 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
       format: 'a4'
     });
 
-    // Dark corporate blue header background
-    doc.setFillColor(0, 45, 98); // #002D62
+    const activeTemplate = templates.find(t => t.id === selectedTemplateId);
+    const activeTheme = getProgramTheme(activeTemplate?.id || selectedTemplateId, activeTemplate?.templateName || '', companyName || branding?.companyName);
+    const tbl = activeTheme.table;
+
+    // Corporate header background matching brand logo
+    doc.setFillColor(tbl.pdfPrimaryHeader[0], tbl.pdfPrimaryHeader[1], tbl.pdfPrimaryHeader[2]);
     doc.rect(0, 0, 210, 22, 'F');
 
     // Title Title Heading
     doc.setTextColor(255, 255, 255);
     doc.setFont('Helvetica', 'bold');
     doc.setFontSize(14);
-    doc.text(branding.companyName.toUpperCase(), 15, 14);
+    doc.text((companyName || branding.companyName || activeTheme.brandName).toUpperCase(), 15, 14);
 
     doc.setFont('Helvetica', 'normal');
     doc.setFontSize(8.5);
     doc.text('OFFICIAL SPONSORSHIP PROPOSAL DOCUMENT', 135, 14);
 
-    // Grid divider
-    doc.setDrawColor(224, 122, 34); // orange border line #E07A22
+    // Grid divider matching brand accent
+    doc.setDrawColor(tbl.pdfAccentDivider[0], tbl.pdfAccentDivider[1], tbl.pdfAccentDivider[2]);
     doc.setLineWidth(1);
     doc.line(0, 22, 210, 22);
 
@@ -1085,8 +1232,8 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     doc.text(`DATED: ${new Date().toLocaleDateString('en-IN')}`, 95, 35);
     doc.text(`TREATMENT: SPONSORED PROPOSAL`, 148, 35);
 
-    // Table item headers backing
-    doc.setFillColor(0, 45, 98);
+    // Table item headers backing matching brand primary
+    doc.setFillColor(tbl.pdfPrimaryHeader[0], tbl.pdfPrimaryHeader[1], tbl.pdfPrimaryHeader[2]);
     doc.rect(15, 44, 180, 8, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFont('Helvetica', 'bold');
@@ -1189,7 +1336,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     }
 
     doc.setFont('Helvetica', 'bold');
-    doc.setTextColor(0, 45, 98);
+    doc.setTextColor(tbl.pdfPayableText[0], tbl.pdfPayableText[1], tbl.pdfPayableText[2]);
     doc.text('NET PAYABLE DRAFT:', 110, startY + 14);
     doc.text(`INR ${Math.round(calculatedNetPayable).toLocaleString('en-IN')}`, 174, startY + 14);
 

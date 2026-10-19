@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { api } from '../lib/api';
 import { EmailTemplate, CompanySettings } from '../types';
+import { getProgramTheme } from './UnifiedMailer';
 
 interface EmailTemplatesProps {
   onNotify: (message: string, type: 'success' | 'error') => void;
@@ -216,51 +217,62 @@ We look forward to guiding your education credentials.
     // Replace signatures and global branding variables
     renderedBody = renderedBody.replace(/{{email_signature}}/gi, branding?.emailSignature || 'Finance Ops Team');
 
-    // Replace dynamic proposal table placeholder with a high-fidelity mock
+    // Dynamically retrieve brand logo theme for this template
+    const theme = getProgramTheme(template.id, template.templateName, branding?.companyName);
+    const tbl = theme.table;
+
+    // Replace dynamic proposal table placeholder with a high-fidelity mock styled to logo colors
     const mockInvoiceTable = `
       <div style="width: 100%; overflow-x: auto; margin: 15px 0;">
-        <table style="width: 100%; border-collapse: collapse; border: 1.5px solid #000000; font-family: Arial, sans-serif; font-size: 13px; color: #000000;">
+        <table style="width: 100%; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: Arial, sans-serif; font-size: 13px; color: #000000;">
           <thead>
-            <tr style="background-color: #002d62; color: #ffffff;">
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: left; text-transform: uppercase;">Selected Programs</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; text-transform: uppercase;">Duration</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; text-transform: uppercase;">Price (Excl. Tax)</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; text-transform: uppercase;">GST 18%</th>
-              <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; text-transform: uppercase;">Total</th>
+            <tr style="background-color: ${tbl.primaryHeaderBg}; color: ${tbl.primaryHeaderText};">
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; text-transform: uppercase;">Selected Programs</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Duration</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Price (Excl. Tax)</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">GST 18%</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding: 10px; border: 1.5px solid #000000;"><strong>PfMP Core Certification Preparation</strong></td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">90 Days</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">₹33,474.58</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">₹6,025.42</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold;">₹39,500.00</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder};"><strong>PfMP Core Certification Preparation</strong></td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">90 Days</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹33,474.58</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹6,025.42</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold;">₹39,500.00</td>
             </tr>
-            <tr style="background-color: #f1f5f9; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid #000000; text-align: right; text-transform: uppercase;">Subtotal (excl. Tax)</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">₹33,474.58</td>
+            <tr style="background-color: ${tbl.subtotalBg}; font-weight: bold;">
+              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Subtotal (excl. Tax)</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹33,474.58</td>
             </tr>
-            <tr style="background-color: #f1f5f9; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid #000000; text-align: right; text-transform: uppercase;">Combined GST Tax</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">₹6,025.42</td>
+            <tr style="background-color: ${tbl.subtotalBg}; font-weight: bold;">
+              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Combined GST Tax</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹6,025.42</td>
             </tr>
-            <tr style="background-color: #e5e7eb; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid #000000; text-align: right; text-transform: uppercase;">Grand Total (incl. GST)</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center;">₹39,500.00</td>
+            <tr style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold;">
+              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Grand Total (incl. GST)</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; background-color: #ffffff; color: #000000;">₹39,500.00</td>
             </tr>
             <tr style="background-color: #e2e8f0; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid #000000; text-align: right; text-transform: uppercase; color: #047857;">Sponsorship Coverage (50%)</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; color: #047857;">₹19,750.00</td>
+              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; color: ${tbl.sponsorshipText};">Sponsorship Coverage (50%)</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; color: ${tbl.sponsorshipText}; background-color: #ffffff;">₹19,750.00</td>
             </tr>
-            <tr style="background-color: #fffbeb; font-weight: bold; border: 2.5px solid #002d62;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid #000000; text-align: right; text-transform: uppercase; background-color: #002d62; color: #ffffff;">Total Payable Amount</td>
-              <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; color: #b45309; font-size: 14px; border: 2px solid #002d62;">₹19,750.00</td>
+            <tr style="background-color: #fffbeb; font-weight: bold; border: 2.5px solid ${tbl.payableBorder};">
+              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText};">Total Payable Amount</td>
+              <td style="padding: 10px; border: 2.5px solid ${tbl.payableBorder}; text-align: center; color: ${tbl.payableHighlight}; font-size: 14px; background-color: #ffffff;">₹19,750.00</td>
             </tr>
           </tbody>
         </table>
       </div>
     `;
+
+    // Smartly update headings like "Proposed Plan & Fee Details" to match the active brand logo color
+    renderedBody = renderedBody
+      .replace(/color:\s*#[0-9a-fA-F]{3,6}([^"]*?border-bottom:\s*2px solid\s*)#[0-9a-fA-F]{3,6}/gi, `color: ${tbl.headingColor}$1${tbl.headingColor}`)
+      .replace(/color:\s*#002d62/gi, `color: ${tbl.headingColor}`)
+      .replace(/solid\s*#002d62/gi, `solid ${tbl.headingColor}`);
+
     renderedBody = renderedBody.replace(/{{invoice_table}}/gi, mockInvoiceTable);
 
     // Smart spacing check: only replace newlines with br tags if it does not look like standard HTML
