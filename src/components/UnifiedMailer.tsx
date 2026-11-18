@@ -770,7 +770,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
             <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; white-space: nowrap;">${item.duration || '90 Days'}</td>
             <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; white-space: nowrap;">${priceVal}</td>
             <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold; white-space: nowrap;">${gstAmtVal}</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">${totalVal}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">${totalVal}</td>
           </tr>
       `;
     });
@@ -778,7 +778,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     ht += `
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Subtotal (excl. Tax)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
     `;
 
@@ -833,7 +833,7 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     ht += `
           <tr style="text-align: center; background-color: #fffbeb;">
             <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
-            <td style="padding: 10px 14px; border: 2.5px solid ${tbl.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
         </tbody>
       </table>

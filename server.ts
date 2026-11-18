@@ -1069,7 +1069,7 @@ app.post('/api/send-email', async (req, res) => {
         </tr>
         <tr style="text-align: center;">
           <td colspan="4" style="background-color: ${tblTheme.payableRowBg}; color: #ffffff; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
-          <td style="padding: 10px 14px; border: 2.5px solid ${tblTheme.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tblTheme.payableHighlight};">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          <td style="padding: 10px 14px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tblTheme.payableHighlight};">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
       </tbody>
     </table>

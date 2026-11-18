@@ -258,9 +258,9 @@ We look forward to guiding your education credentials.
               <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; color: ${tbl.sponsorshipText}; font-size: 12px;">Sponsorship Coverage (50%)</td>
               <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; color: ${tbl.sponsorshipText}; background-color: #ffffff; font-size: 13px; font-weight: bold; width: 24%; min-width: 140px; white-space: nowrap;">₹19,750.00</td>
             </tr>
-            <tr style="background-color: #fffbeb; font-weight: bold; border: 2.5px solid ${tbl.payableBorder};">
+            <tr style="background-color: #fffbeb; font-weight: bold; border: 1.5px solid ${tbl.tableBorder};">
               <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-size: 12px;">Total Payable Amount</td>
-              <td style="padding: 10px 14px; border: 2.5px solid ${tbl.payableBorder}; text-align: center; color: ${tbl.payableHighlight}; font-size: 13px; font-weight: bold; background-color: #ffffff; width: 24%; min-width: 140px; white-space: nowrap;">₹19,750.00</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; color: ${tbl.payableHighlight}; font-size: 13px; font-weight: bold; background-color: #ffffff; width: 24%; min-width: 140px; white-space: nowrap;">₹19,750.00</td>
             </tr>
           </tbody>
         </table>

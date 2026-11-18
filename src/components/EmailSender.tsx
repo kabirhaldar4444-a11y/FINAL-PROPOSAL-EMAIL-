@@ -325,7 +325,7 @@ export default function EmailSender({
           </tr>
           <tr style="text-align: center; background-color: #fffbeb;">
             <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
-            <td style="padding: 10px 14px; border: 2.5px solid ${tbl.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${payableAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${payableAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
         </tbody>
       </table>
