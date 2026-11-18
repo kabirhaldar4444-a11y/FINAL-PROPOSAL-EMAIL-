@@ -228,39 +228,39 @@ We look forward to guiding your education credentials.
           <thead>
             <tr style="background-color: ${tbl.primaryHeaderBg}; color: ${tbl.primaryHeaderText};">
               <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; text-transform: uppercase;">Selected Programs</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Duration</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Price (Excl. Tax)</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">GST 18%</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase;">Total</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. Tax)</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST 18%</th>
+              <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; text-transform: uppercase; width: 24%; min-width: 140px; white-space: nowrap;">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder};"><strong>PfMP Core Certification Preparation</strong></td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">90 Days</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹33,474.58</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹6,025.42</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold;">₹39,500.00</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">90 Days</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">₹33,474.58</td>
+              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">₹6,025.42</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹39,500.00</td>
             </tr>
             <tr style="background-color: ${tbl.subtotalBg}; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Subtotal (excl. Tax)</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹33,474.58</td>
+              <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; font-size: 12px;">Subtotal (excl. Tax)</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-size: 13px; font-weight: bold; width: 24%; min-width: 140px; white-space: nowrap;">₹33,474.58</td>
             </tr>
             <tr style="background-color: ${tbl.subtotalBg}; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Combined GST Tax</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center;">₹6,025.42</td>
+              <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; font-size: 12px;">Combined GST Tax</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-size: 13px; font-weight: bold; width: 24%; min-width: 140px; white-space: nowrap;">₹6,025.42</td>
             </tr>
             <tr style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase;">Grand Total (incl. GST)</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; background-color: #ffffff; color: #000000;">₹39,500.00</td>
+              <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; font-size: 12px;">Grand Total (incl. GST)</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; background-color: #ffffff; color: #000000; font-size: 13px; font-weight: bold; width: 24%; min-width: 140px; white-space: nowrap;">₹39,500.00</td>
             </tr>
             <tr style="background-color: #e2e8f0; font-weight: bold;">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; color: ${tbl.sponsorshipText};">Sponsorship Coverage (50%)</td>
-              <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; color: ${tbl.sponsorshipText}; background-color: #ffffff;">₹19,750.00</td>
+              <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; color: ${tbl.sponsorshipText}; font-size: 12px;">Sponsorship Coverage (50%)</td>
+              <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; color: ${tbl.sponsorshipText}; background-color: #ffffff; font-size: 13px; font-weight: bold; width: 24%; min-width: 140px; white-space: nowrap;">₹19,750.00</td>
             </tr>
             <tr style="background-color: #fffbeb; font-weight: bold; border: 2.5px solid ${tbl.payableBorder};">
-              <td colspan="4" style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText};">Total Payable Amount</td>
-              <td style="padding: 10px; border: 2.5px solid ${tbl.payableBorder}; text-align: center; color: ${tbl.payableHighlight}; font-size: 14px; background-color: #ffffff;">₹19,750.00</td>
+              <td colspan="4" style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: right; text-transform: uppercase; background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-size: 12px;">Total Payable Amount</td>
+              <td style="padding: 10px 14px; border: 2.5px solid ${tbl.payableBorder}; text-align: center; color: ${tbl.payableHighlight}; font-size: 13px; font-weight: bold; background-color: #ffffff; width: 24%; min-width: 140px; white-space: nowrap;">₹19,750.00</td>
             </tr>
           </tbody>
         </table>

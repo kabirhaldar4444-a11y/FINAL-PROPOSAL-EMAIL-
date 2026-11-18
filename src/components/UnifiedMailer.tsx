@@ -740,14 +740,14 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
 
     let ht = `
       <div style="width: 100%; overflow-x: auto; margin: 20px 0; -webkit-overflow-scrolling: touch; text-align: left;">
-        <table style="width: 55%; min-width: 320px; margin: 20px 0; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
+        <table style="width: 60%; min-width: 500px; margin: 20px 0; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
           <thead>
             <tr style="background-color: ${tbl.primaryHeaderBg}; color: ${tbl.primaryHeaderText};">
               <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Duration</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Price (Excl. Tax)</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">GST 18% in Rs</th>
-              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase;">Total</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. Tax)</th>
+              <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST 18% in Rs</th>
+              <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 24%; min-width: 140px; white-space: nowrap;">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -767,26 +767,26 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
       ht += `
           <tr style="background-color: #ffffff; text-align: center;">
             <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; vertical-align: top;">${progNameCellContent}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top;">${item.duration || '90 Days'}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top;">${priceVal}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold;">${gstAmtVal}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold;">${totalVal}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; white-space: nowrap;">${item.duration || '90 Days'}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; white-space: nowrap;">${priceVal}</td>
+            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold; white-space: nowrap;">${gstAmtVal}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: top; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">${totalVal}</td>
           </tr>
       `;
     });
 
     ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Subtotal (excl. Tax)</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Subtotal (excl. Tax)</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${rawBaseSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
     `;
 
     if (calculatedGstValue > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined GST Tax</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">₹${calculatedGstValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Combined GST Tax</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">₹${calculatedGstValue.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
@@ -795,28 +795,28 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
       const avgDiscPercent = rawBaseSubtotal > 0 ? Math.round((discountReductionAmount / rawBaseSubtotal) * 100) : 0;
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Combined Rebate Discount (${avgDiscPercent}%)</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${discountReductionAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Combined Rebate Discount (${avgDiscPercent}%)</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">-₹${discountReductionAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
 
     ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (incl. GST)</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold;">₹${computedGrandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Grand Total (incl. GST)</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">₹${computedGrandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
     `;
 
     if (grandDiscountAmount > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #fafaf9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">${grandDiscountLabel}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: #000000;">-₹${grandDiscountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: #fafaf9; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">${grandDiscountLabel}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">-₹${grandDiscountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Grand Total (After Discount)</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; font-weight: bold; color: #000000;">₹${grandTotalAfterDiscount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Grand Total (After Discount)</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;">₹${grandTotalAfterDiscount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
@@ -824,16 +824,16 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
     if (applySponsorship && calculatedSponsorshipBenefit > 0) {
       ht += `
           <tr style="text-align: center;">
-            <td colspan="4" style="background-color: #e5e7eb; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 12px; text-transform: uppercase;">Sponsorship Coverage (50%)</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 12px; color: ${tbl.sponsorshipText}; font-weight: bold;">₹${calculatedSponsorshipBenefit.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: #e5e7eb; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Sponsorship Coverage (50%)</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.sponsorshipText};">₹${calculatedSponsorshipBenefit.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
 
     ht += `
           <tr style="text-align: center; background-color: #fffbeb;">
-            <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px; font-size: 13px; text-transform: uppercase;">Total Payable Amount</td>
-            <td style="padding: 10px; border: 2.5px solid ${tbl.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 14px; color: ${tbl.payableHighlight};">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
+            <td style="padding: 10px 14px; border: 2.5px solid ${tbl.payableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${calculatedNetPayable.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
         </tbody>
       </table>
@@ -845,6 +845,8 @@ export default function UnifiedMailer({ theme = 'dark', onNotify, user, onLogout
 
   const compileActiveTemplate = () => {
     const rawTemplateObj = templates.find(t => t.id === selectedTemplateId) || {
+      id: selectedTemplateId,
+      templateName: '',
       subject: 'Thank you for your interest - Proposal from I-SUCCESSNODE',
       htmlContent: `<p>Dear <strong>{{customer_name}}</strong>,</p>
 <p>Greetings from <strong>I-SUCCESSNODE</strong>!</p>
