@@ -1026,15 +1026,18 @@ app.post('/api/send-email', async (req, res) => {
   const templateObj = templateId ? db.emailTemplates.find(t => t.id === templateId) : null;
   const tblTheme = getServerProgramTableTheme(templateId || '', templateObj?.templateName || '', customer.companyName || '');
 
+  const numStyle = `padding: 10px 14px; border: 1.5px solid #000000; text-align: center; vertical-align: middle; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: bold; font-variant-numeric: tabular-nums; white-space: nowrap; color: #000000;`;
+  const totalNumStyle = `padding: 10px 14px; border: 1.5px solid #000000; text-align: center; vertical-align: middle; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: bold; font-variant-numeric: tabular-nums; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;`;
+
   // Dynamic High-Fidelity HTML Table styled smartly to logo colors
   let invoiceTableHtml = `
-    <table style="width: 60%; margin: 20px 0; min-width: 500px; border-collapse: collapse; border: 1.5px solid #000000; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; color: #000000;">
+    <table style="width: 60%; margin: 20px 0; min-width: 500px; border-collapse: collapse; border: 1.5px solid #000000; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; color: #000000; font-variant-numeric: tabular-nums;">
       <thead>
         <tr style="background-color: ${tblTheme.primaryHeaderBg}; color: #ffffff;">
-          <th style="padding: 10px; border: 1.5px solid #000000; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
-          <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
-          <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. Tax)</th>
-          <th style="padding: 10px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST 18% in Rs</th>
+          <th style="padding: 10px 14px; border: 1.5px solid #000000; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
+          <th style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
+          <th style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. Tax)</th>
+          <th style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST 18% in Rs</th>
           <th style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 24%; min-width: 140px; white-space: nowrap;">Total</th>
         </tr>
       </thead>
@@ -1049,11 +1052,11 @@ app.post('/api/send-email', async (req, res) => {
 
     invoiceTableHtml += `
         <tr style="background-color: #ffffff; text-align: center;">
-          <td style="padding: 10px; border: 1.5px solid #000000; text-align: left; font-weight: bold;">${item.programName}</td>
-          <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; white-space: nowrap;">${item.duration || '90 Days'}</td>
-          <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; white-space: nowrap;">${priceVal}</td>
-          <td style="padding: 10px; border: 1.5px solid #000000; text-align: center; white-space: nowrap;">${gstVal}</td>
-          <td style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">${totalVal}</td>
+          <td style="padding: 10px 14px; border: 1.5px solid #000000; text-align: left; font-weight: bold;">${item.programName}</td>
+          <td style="padding: 10px 14px; border: 1.5px solid #000000; text-align: center; vertical-align: middle; white-space: nowrap; font-size: 13px;">${item.duration || '90 Days'}</td>
+          <td style="${numStyle}">${priceVal}</td>
+          <td style="${numStyle}">${gstVal}</td>
+          <td style="${totalNumStyle}">${totalVal}</td>
         </tr>
     `;
   });
@@ -1061,15 +1064,15 @@ app.post('/api/send-email', async (req, res) => {
   invoiceTableHtml += `
         <tr style="text-align: center;">
           <td colspan="4" style="background-color: ${tblTheme.grandTotalBg}; color: #ffffff; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total</td>
-          <td style="padding: 10px 14px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${Number(invoice.grandTotal || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          <td style="${totalNumStyle}">₹${Number(invoice.grandTotal || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
         <tr style="text-align: center;">
           <td colspan="4" style="background-color: ${tblTheme.subtotalBg}; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Sponsorship</td>
-          <td style="padding: 10px 14px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${Number(invoice.sponsorshipAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          <td style="${totalNumStyle}">₹${Number(invoice.sponsorshipAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
         <tr style="text-align: center;">
           <td colspan="4" style="background-color: ${tblTheme.payableRowBg}; color: #ffffff; font-weight: bold; text-align: right; border: 1.5px solid #000000; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
-          <td style="padding: 10px 14px; border: 1.5px solid #000000; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tblTheme.payableHighlight};">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+          <td style="${totalNumStyle} color: ${tblTheme.payableHighlight};">₹${Number(invoice.payableAmount || 0).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         </tr>
       </tbody>
     </table>

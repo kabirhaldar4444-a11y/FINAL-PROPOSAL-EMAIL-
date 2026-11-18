@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import { api } from '../lib/api';
 import { Customer, Invoice, EmailTemplate, EmailLog, CompanySettings, InvoiceItem } from '../types';
-import { getProgramTheme } from './UnifiedMailer';
+import { getProgramTheme } from '../lib/programThemes';
 
 interface EmailSenderProps {
   customers: Customer[];
@@ -266,14 +266,17 @@ export default function EmailSender({
     const activeTheme = getProgramTheme(selectedTemplateId, activeTemplate?.templateName || '', branding?.companyName);
     const tbl = activeTheme.table;
 
+    const numStyle = `padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: middle; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: bold; font-variant-numeric: tabular-nums; white-space: nowrap; color: #000000;`;
+    const totalNumStyle = `padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: middle; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: bold; font-variant-numeric: tabular-nums; width: 24%; min-width: 140px; white-space: nowrap; color: #000000;`;
+
     let html = `
-      <table style="width: 100%; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; margin: 20px 0; color: #000000;">
+      <table style="width: 100%; border-collapse: collapse; border: 1.5px solid ${tbl.tableBorder}; font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; margin: 20px 0; color: #000000; font-variant-numeric: tabular-nums;">
         <thead>
           <tr style="background-color: ${tbl.primaryHeaderBg}; color: ${tbl.primaryHeaderText};">
-            <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
-            <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
-            <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. GST)</th>
-            <th style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST (18%)</th>
+            <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold; font-size: 12px; text-transform: uppercase;">Selected Programs</th>
+            <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 14%; min-width: 75px; white-space: nowrap;">Duration</th>
+            <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 18%; min-width: 110px; white-space: nowrap;">Price (Excl. GST)</th>
+            <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 16%; min-width: 105px; white-space: nowrap;">GST (18%)</th>
             <th style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 12px; text-transform: uppercase; width: 24%; min-width: 140px; white-space: nowrap;">Total</th>
           </tr>
         </thead>
@@ -288,11 +291,11 @@ export default function EmailSender({
 
       html += `
           <tr style="background-color: #ffffff; text-align: center;">
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold;">${item.programName || 'Training Development Program'}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">${item.duration || '90 Days'}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">${priceVal}</td>
-            <td style="padding: 10px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; white-space: nowrap;">${gstVal}</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; font-weight: bold; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">${totalVal}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: left; font-weight: bold;">${item.programName || 'Training Development Program'}</td>
+            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; text-align: center; vertical-align: middle; white-space: nowrap; font-size: 13px;">${item.duration || '90 Days'}</td>
+            <td style="${numStyle}">${priceVal}</td>
+            <td style="${numStyle}">${gstVal}</td>
+            <td style="${totalNumStyle}">${totalVal}</td>
           </tr>
       `;
     });
@@ -301,15 +304,15 @@ export default function EmailSender({
       html += `
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Subtotal (Excl. GST)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${rawSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle}">₹${rawSubtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: #dc2626; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Applied Discount (${discountPercent}%)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: #dc2626;">-₹${discountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle} color: #dc2626;">-₹${discountAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: ${tbl.subtotalBg}; color: ${tbl.subtotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">GST (18% on Discounted Base)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${totalGst.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle}">₹${totalGst.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
       `;
     }
@@ -317,15 +320,15 @@ export default function EmailSender({
     html += `
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: ${tbl.grandTotalBg}; color: ${tbl.grandTotalText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Grand Total (Incl. GST)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap;">₹${grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle}">₹${grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center;">
             <td colspan="4" style="background-color: #e5e7eb; color: #000000; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Sponsorship Amount (50% Fixed)</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.sponsorshipText}; font-weight: bold;">₹${sponsorshipAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle} color: ${tbl.sponsorshipText};">₹${sponsorshipAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
           <tr style="text-align: center; background-color: #fffbeb;">
             <td colspan="4" style="background-color: ${tbl.payableRowBg}; color: ${tbl.payableRowText}; font-weight: bold; text-align: right; border: 1.5px solid ${tbl.tableBorder}; padding: 10px 14px; font-size: 12px; text-transform: uppercase;">Total Payable Amount</td>
-            <td style="padding: 10px 14px; border: 1.5px solid ${tbl.tableBorder}; font-weight: bold; text-align: center; background-color: #ffffff; font-size: 13px; width: 24%; min-width: 140px; white-space: nowrap; color: ${tbl.payableHighlight};">₹${payableAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td style="${totalNumStyle} color: ${tbl.payableHighlight};">₹${payableAmount.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
           </tr>
         </tbody>
       </table>
